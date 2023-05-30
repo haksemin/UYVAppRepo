@@ -1,9 +1,12 @@
 import { StyleSheet, Platform, StatusBar } from "react-native";
 
+const THEME_COLOR = '#FFFFFF';
 export default StyleSheet.create({
   AndroidSafeArea: {
-    flex: 1,
-    backgroundColor: "#F5F5F5",
+    topSafeArea: {
+      flex: 0, 
+      backgroundColor: THEME_COLOR
+  }, 
     paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0
     
   }

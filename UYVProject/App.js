@@ -3,24 +3,16 @@ import { SafeAreaView, StatusBar, View, StyleSheet, Platform } from "react-nativ
 import SafeViewAndroid from "./src/components/SafeViewAndroid";
 
 
-export default function App() {
-  const statusBarHeight = Platform.OS === "ios" ? 20 : StatusBar.currentHeight;
 
-  return (
-    <>
-      <StatusBar backgroundColor="white" barStyle="dark-content" />
-      <SafeAreaView style={SafeViewAndroid.AndroidSafeArea}>
-        <View style={{ backgroundColor: "black", height: 72 }} />
-       
-        {/* Diğer içerikler */}
-      </SafeAreaView>
-    </>
-  );
+export default function App() {
+    return (
+        <>
+            <SafeAreaView style={SafeViewAndroid.AndroidSafeArea} />
+            <StatusBar barStyle="dark-content" />
+            <View style={{backgroundColor:"#F5F5F5",flex:1}}></View>
+            
+        </>
+    );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#F5F5F5",
-  },
-});
+
