@@ -1,5 +1,5 @@
-import React, {Component,} from 'react';
-import {AppRegistry, StyleSheet,View,StatusBar,Platform,SafeAreaView} from 'react-native';
+import React from 'react';
+import {AppRegistry, StyleSheet,View,StatusBar,Platform,SafeAreaView,Text, Image, Touchable, TouchableOpacity} from 'react-native';
 
 const MyStatusBar = ({backgroundColor, ...props}) => (
   <View style={[styles.statusBar, { backgroundColor }]}>
@@ -18,8 +18,16 @@ export default function App(){
       <>
         <View style={styles.container}>
         <MyStatusBar backgroundColor="white" barStyle="dark-content" />
-        <View style={styles.appBar} />
-        <View style={styles.content} />
+        <View style={styles.appBar}>
+          <Image source={require("./src/images/UYVLogo.png")} style={{position:"absolute",left:15}}></Image>
+          <TouchableOpacity style={{position:"absolute",height:42,width:42 ,right:15}}>
+          <Image source={require("./src/images/Destek.png")} style={{height:"100%",width:"100%"}}></Image>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.content}>
+        <Image source={require("./src/images/Vector.png")} style={{height:"100%",width:"100%"}}></Image>
+          <Text>Merhaba</Text>
+        </View>
       </View>
       </>
     );
@@ -47,7 +55,9 @@ const styles = StyleSheet.create({
   },
   appBar: {
     backgroundColor:'white',
-    height: APPBAR_HEIGHT,
+    height: 72,
+    justifyContent:"center",
+
   },
   content: {
     flex: 1,
