@@ -1,18 +1,31 @@
 import React, { useEffect, useState } from "react";
 import { SafeAreaView, StatusBar, View, StyleSheet, Platform } from "react-native";
-import SafeViewAndroid from "./src/components/SafeViewAndroid";
 
+const iosStatsBarColor = 'red';
 
 
 export default function App() {
     return (
         <>
-            <SafeAreaView />
-            <StatusBar backgroundColor={"red"} barStyle="dark-content" />
-            <View style={{backgroundColor:"red",flex:1}}></View>
+            <StatusBar backgroundColor={"white"} barStyle="dark-content" />
+            <SafeAreaView style={styles.topSafeArea}>
+            <View style={{backgroundColor:"black",height:72}}></View>
+            </SafeAreaView >
+            
+            
+            
+            
             
         </>
     );
 }
 
+
+const styles = StyleSheet.create({
+    topSafeArea: {
+        flex: 0, 
+        backgroundColor: iosStatsBarColor
+    },
+ 
+})
 
