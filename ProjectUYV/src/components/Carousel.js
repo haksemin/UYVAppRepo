@@ -67,37 +67,37 @@ export default function Carousel() {
   const carouselItems = data.mainCarousel;
 
   return (
-    <View style={{ height:215 }}>
+    <View style={{ height:230 ,top:25,justifyContent:"center"}}>
       <ScrollView
         ref={scrollViewRef}
         horizontal
         pagingEnabled
         showsHorizontalScrollIndicator={false}
-        style={{ height: 250, flex: 1 }}
+        style={{ flex: 1 }}
         onScroll={handleScroll}
         scrollEventThrottle={16}
       >
         <Image
-          style={{ width: width, height: 220, top: 10, resizeMode: "contain" }}
+          style={{ width: width, height: 215, top: 15, resizeMode: "contain" }}
           source={{ uri: carouselItems[carouselItems.length - 1].image }}
         />
         {carouselItems.map((item, index) => (
           
-          <View key={index} style={{flex:1}}>
+          <View key={index} style={{alignItems:"center", justifyContent:"flex-end"}}>
           
             
           <Image
             key={index}
-            style={{ width: width, height: 220, top: 15, resizeMode: "contain" }}
+            style={{ width: width, height: 215, top: 15, resizeMode: "contain" }}
             source={{ uri: item.image }}
           />
-          <Text style ={{position:"absolute",}}>{item.name}</Text>
+          <Text style ={{position:"absolute",bottom:50,left:30,fontSize:18,color:"white"}}>{item.name}</Text>
           <Button style ={{position:"absolute"}} title={item.buttonName}></Button>
           
           </View>
         ))}
         <Image
-          style={{ width: width, height: 220, top: 15, resizeMode: "contain" }}
+          style={{ width: width, height: 215, top: 15, resizeMode: "contain" }}
           source={{ uri: carouselItems[0].image }}
         />
       </ScrollView>
