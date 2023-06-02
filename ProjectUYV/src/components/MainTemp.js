@@ -16,18 +16,15 @@ export default function MainTemp(){
   
     return (
       <>
-        <View style={Mainstyles.container}>
+        <View style={Mainstyles.statusBar}>
         <MyStatusBar backgroundColor="white" barStyle="dark-content" />
         <View style={Mainstyles.appBar}>
-          <Image source={require("./src/images/UYVLogo.png")} style={{position:"absolute",left:15}}></Image>
+          <Image source={require("../images/UYVLogo.png")} style={{position:"absolute",left:15}}></Image>
           <TouchableOpacity style={{position:"absolute",height:42,width:42 ,right:15}}>
-          <Image source={require("./src/images/Destek.png")} style={{height:"100%",width:"100%"}}></Image>
+          <Image source={require("../images/Destek.png")} style={{height:"100%",width:"100%"}}></Image>
           </TouchableOpacity>
         </View>
-        <View style={Mainstyles.content}>
-        <Image source={require("./src/images/Vector.png")} style={{height:"100%",width:"100%"}}></Image>
-          <Text>Merhaba</Text>
-        </View>
+       
       </View>
       </>
     );

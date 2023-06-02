@@ -7,6 +7,7 @@ const APPBAR_HEIGHT = Platform.OS === 'ios' ? 44 : 56;
 const Mainstyles = StyleSheet.create({
   container: {
     flex: 1,
+    
   },
   statusBar: {
     height: STATUSBAR_HEIGHT,
