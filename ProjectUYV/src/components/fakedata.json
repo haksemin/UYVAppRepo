@@ -1,0 +1,16 @@
+{
+    "carousel":{
+        "card0":{
+                "image": "../images/CardSlider.png",
+                "text": "Card0"
+        },
+        "card1":{
+            "image": "../images/CardSlider.png",
+            "text": "Card1"
+        },
+        "card2":{
+            "image": "../images/CardSlider.png",
+            "text": "Card2"
+        }
+    }
+}
