@@ -19,14 +19,14 @@ const carouselItems = [
 ];
 
 export default function Carousel() {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(1);
   const scrollViewRef = useRef(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
       let nextIndex = activeIndex + 1;
-      if (nextIndex === carouselItems.length) {
-        nextIndex = 0;
+      if (nextIndex === carouselItems.length + 1) {
+        nextIndex = 1;
       }
       scrollViewRef.current.scrollTo({
         x: nextIndex * width,
@@ -42,18 +42,19 @@ export default function Carousel() {
   const handleScroll = (event) => {
     const slideSize = width;
     const { contentOffset } = event.nativeEvent;
-    const activeIndex = Math.floor(contentOffset.x / slideSize);
-    setActiveIndex(activeIndex);
-  };
-
-  const handleScrollEnd = (event) => {
-    const slideSize = width;
-    const { contentOffset } = event.nativeEvent;
     const pageIndex = Math.floor(contentOffset.x / slideSize);
 
-    if (pageIndex === carouselItems.length - 1) {
-      scrollViewRef.current.scrollTo({ x: 0, animated: false });
-      setActiveIndex(0);
+    if (pageIndex === 0) {
+      scrollViewRef.current.scrollTo({
+        x: carouselItems.length * width,
+        animated: false,
+      });
+      setActiveIndex(carouselItems.length);
+    } else if (pageIndex === carouselItems.length + 1) {
+      scrollViewRef.current.scrollTo({ x: width, animated: false });
+      setActiveIndex(1);
+    } else {
+      setActiveIndex(pageIndex);
     }
   };
 
@@ -66,36 +67,41 @@ export default function Carousel() {
         showsHorizontalScrollIndicator={false}
         style={{ flex: 1 }}
         onScroll={handleScroll}
-        onMomentumScrollEnd={handleScrollEnd}
         scrollEventThrottle={16}
       >
+        <Image
+          style={{ width: width, height: 220, top: 15, resizeMode: "contain" }}
+          source={carouselItems[carouselItems.length - 1].image}
+        />
         {carouselItems.map((item, index) => (
-          <View key={index}>
-            <Image
-              style={{ width: width, height: 220, top: 15, resizeMode: "contain" }}
-              source={item.image}
-            />
-          </View>
+          <Image
+            key={index}
+            style={{ width: width, height: 220, top: 15, resizeMode: "contain" }}
+            source={item.image}
+          />
         ))}
+        <Image
+          style={{ width: width, height: 220, top: 15, resizeMode: "contain" }}
+          source={carouselItems[0].image}
+        />
       </ScrollView>
-      <View style={{ flexDirection: "row", justifyContent: "center", marginTop: 10 }}>
+      <View
+        style={{
+          flexDirection: "row",
+          justifyContent: "center",
+          marginTop: 10,
+        }}
+      >
         {carouselItems.map((item, index) => (
           <View
             key={index}
-            style={[
-              {
-                opacity: index === activeIndex ? 1 : 0.3,
-              },
-              {
-                width: 10,
-                height: 10,
-                borderRadius: 5,
-                marginHorizontal: 5,
-                backgroundColor: "gray",
-                top: -450,
-              },
-              index === activeIndex && { backgroundColor: "white" },
-            ]}
+            style={{
+              width: 10,
+              height: 10,
+              borderRadius: 5,
+              marginHorizontal: 5,
+              backgroundColor: index === activeIndex - 1 ? "white" : "gray",
+            }}
           />
         ))}
       </View>
