@@ -1,43 +1,45 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Image, ScrollView, View, Dimensions } from "react-native";
+import { Image, ScrollView, View, Dimensions, Text, Button } from "react-native";
+import axios from "axios";
 
 const { width } = Dimensions.get("window");
 
-const carouselItems = [
-  {
-    image: require("../images/CardSlider.png"),
-    text: "Card0",
-  },
-  {
-    image: require("../images/CardSlider.png"),
-    text: "Card1",
-  },
-  {
-    image: require("../images/CardSlider.png"),
-    text: "Card2",
-  },
-];
-
 export default function Carousel() {
+  const [data, setData] = useState(null);
   const [activeIndex, setActiveIndex] = useState(1);
   const scrollViewRef = useRef(null);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      let nextIndex = activeIndex + 1;
-      if (nextIndex === carouselItems.length + 1) {
-        nextIndex = 1;
-      }
-      scrollViewRef.current.scrollTo({
-        x: nextIndex * width,
-        y: 0,
-        animated: true,
-      });
-      setActiveIndex(nextIndex);
-    }, 10000);
+    fetchData();
+  }, []);
 
-    return () => clearInterval(interval);
-  }, [activeIndex]);
+  const fetchData = async () => {
+    try {
+      const response = await axios.get("https://websolist.com/testapi/");
+      setData(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    if (data) {
+      const interval = setInterval(() => {
+        let nextIndex = activeIndex + 1;
+        if (nextIndex === data.mainCarousel.length + 1) {
+          nextIndex = 1;
+        }
+        scrollViewRef.current.scrollTo({
+          x: nextIndex * width,
+          y: 0,
+          animated: true,
+        });
+        setActiveIndex(nextIndex);
+      }, 10000);
+
+      return () => clearInterval(interval);
+    }
+  }, [activeIndex, data]);
 
   const handleScroll = (event) => {
     const slideSize = width;
@@ -46,11 +48,11 @@ export default function Carousel() {
 
     if (pageIndex === 0) {
       scrollViewRef.current.scrollTo({
-        x: carouselItems.length * width,
+        x: data.mainCarousel.length * width,
         animated: false,
       });
-      setActiveIndex(carouselItems.length);
-    } else if (pageIndex === carouselItems.length + 1) {
+      setActiveIndex(data.mainCarousel.length);
+    } else if (pageIndex === data.mainCarousel.length + 1) {
       scrollViewRef.current.scrollTo({ x: width, animated: false });
       setActiveIndex(1);
     } else {
@@ -58,31 +60,45 @@ export default function Carousel() {
     }
   };
 
+  if (!data) {
+    return null; // veya bir yüklenme göstergesi
+  }
+
+  const carouselItems = data.mainCarousel;
+
   return (
-    <View style={{ flex: 1 }}>
+    <View style={{ height:215 }}>
       <ScrollView
         ref={scrollViewRef}
         horizontal
         pagingEnabled
         showsHorizontalScrollIndicator={false}
-        style={{ flex: 1 }}
+        style={{ height: 250, flex: 1 }}
         onScroll={handleScroll}
         scrollEventThrottle={16}
       >
         <Image
-          style={{ width: width, height: 220, top: 15, resizeMode: "contain" }}
-          source={carouselItems[carouselItems.length - 1].image}
+          style={{ width: width, height: 220, top: 10, resizeMode: "contain" }}
+          source={{ uri: carouselItems[carouselItems.length - 1].image }}
         />
         {carouselItems.map((item, index) => (
+          
+          <View key={index} style={{flex:1}}>
+          
+            
           <Image
             key={index}
             style={{ width: width, height: 220, top: 15, resizeMode: "contain" }}
-            source={item.image}
+            source={{ uri: item.image }}
           />
+          <Text style ={{position:"absolute",}}>{item.name}</Text>
+          <Button style ={{position:"absolute"}} title={item.buttonName}></Button>
+          
+          </View>
         ))}
         <Image
           style={{ width: width, height: 220, top: 15, resizeMode: "contain" }}
-          source={carouselItems[0].image}
+          source={{ uri: carouselItems[0].image }}
         />
       </ScrollView>
       <View
