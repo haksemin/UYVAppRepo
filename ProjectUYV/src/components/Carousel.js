@@ -57,7 +57,7 @@ const Carousel = () => {
         viewabilityConfig={viewabilityConfig.current}
       />
 
-      <View style={{ flexDirection: 'row', alignSelf: 'center', marginTop: 10 }}>
+      <View style={{ flexDirection: 'row', alignSelf: 'center' }}>
         {data.map((item, index) => (
           <View key={index} style={{ height: 10, width: 10, borderRadius: 5, margin: 5, backgroundColor: currentIndex === index ? '#163E6C' : '#DCE2E9' }} />
         ))}
