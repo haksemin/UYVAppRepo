@@ -1,48 +1,34 @@
-import React, { useEffect, useState } from 'react';
-import { View, Image, Text, TouchableOpacity } from 'react-native';
-import axios from 'axios';
+import React from 'react';
+import { View, Dimensions, Image ,Text, Touchable, TouchableOpacity} from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 
-const CarouselCards = () => {
-  const [data, setData] = useState(null);
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  const fetchData = async () => {
-    try {
-      const response = await axios.get('https://websolist.com/testapi/');
-      setData(response.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const renderCards = () => {
-    if (data && data.mainCarousel) {
-      return data.mainCarousel.map((item, index) => (
-        <View key={index} style={{ marginBottom: 20 }}>
-          <Image source={{ uri: item.image }} style={{ width: 200, height: 200 }} />
-          <Text>{item.name}</Text>
-          <TouchableOpacity onPress={() => handleButtonPress(item.productId)}>
-            <Text>{item.buttonName}</Text>
-          </TouchableOpacity>
-        </View>
-      ));
-    }
-    return null;
-  };
-
-  const handleButtonPress = (productId) => {
-    // Bağış yap butonuna basıldığında yapılacak işlemler
-    console.log('Bağış yapılacak ürün ID:', productId);
-  };
+export default function CarouselCard() {
+  const screenWidth = Dimensions.get('window').width;
+  
 
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      {renderCards()}
+    <View
+      style={{
+        backgroundColor: "black",
+        position: 'absolute',
+        width: 345,
+        height: 215,
+        alignSelf: "center",
+        borderRadius: 10,
+        top: 15,
+      }}>
+      <LinearGradient
+        colors={['rgba(22, 62, 108, 0)', '#163E6C']}
+        style={{ flex: 1 }}
+      >
+        <Image source={require("../images/CardSlider.png")}  />
+        <Text style={{ fontFamily: "OpenSans-Bold", position: "absolute", left: 15, bottom: 62, color: "white", fontSize: 18, fontWeight: 700, lineHeight: 25 }}>Türkiye Acil Yardım</Text>
+        <TouchableOpacity style={{ width: 315, height: 42, bottom: 15, backgroundColor: "#E74C3C", position: "absolute", alignSelf: "center", justifyContent: "center", borderRadius: 10 }}>
+          <Text style={{ fontFamily: "OpenSans-Bold", fontSize: 14, lineHeight: 19, color: "white", fontWeight: 600, alignSelf: "center" }}>Bağış Yap</Text>
+
+        </TouchableOpacity>
+      </LinearGradient>
     </View>
   );
-};
 
-export default CarouselCards;
+}
