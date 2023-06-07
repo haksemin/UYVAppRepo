@@ -1,8 +1,10 @@
 import React from "react";
 import { StyleSheet, StatusBar, Platform, View } from 'react-native';
 
-const STATUSBAR_HEIGHT = StatusBar.currentHeight;
-const APPBAR_HEIGHT = Platform.OS === 'ios' ? 44 : 56;
+const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? 20 : StatusBar.currentHeight;
+const APPBAR_HEIGHT = Platform.OS === 'ios' ? 44 : 50; 
+
+
 
 const Mainstyles = StyleSheet.create({
   container: {
@@ -16,6 +18,7 @@ const Mainstyles = StyleSheet.create({
     backgroundColor:'white',
     height: 72,
     justifyContent:"center",
+    flex:1
 
   },
   content: {
