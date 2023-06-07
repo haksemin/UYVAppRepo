@@ -18,7 +18,6 @@ const Mainstyles = StyleSheet.create({
     backgroundColor:'white',
     height: 72,
     justifyContent:"center",
-    flex:1
 
   },
   content: {
