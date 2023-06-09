@@ -14,6 +14,7 @@ export default function CardBagis({ item }) {
           height: 215,
           padding: 15,
           borderRadius: 10,
+          alignSelf:"center"
         }}>
         <LinearGradient colors={['rgba(22, 62, 108, 0)', '#163E6C']} style={{flex: 1, borderRadius: 10, justifyContent: 'flex-end', padding: 10}}>
           <Image source={{uri: item.image}} style={{...StyleSheet.absoluteFillObject, resizeMode: 'cover', borderRadius: 10}}/>
