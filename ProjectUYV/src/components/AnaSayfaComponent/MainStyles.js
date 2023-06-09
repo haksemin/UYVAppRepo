@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, StatusBar, Platform, View } from 'react-native';
 
-const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? 20 : StatusBar.currentHeight;
+const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? 35 : StatusBar.currentHeight;
 const APPBAR_HEIGHT = Platform.OS === 'ios' ? 44 : 50; 
 
 

@@ -14,7 +14,9 @@ export default function MainScreen(){
 
     return(
         <>
+               
         <MainTemp/>
+        <ScrollView> 
          <View style={Mainstyles.content}>
             <Image source={require("../../images/Vector.png")} style={{flex:1,position:"absolute"}}></Image>
             <View style={{flex:1}}>
@@ -23,6 +25,8 @@ export default function MainScreen(){
             </View>
             
          </View>
+         </ScrollView>
+
          </>
 
     )
