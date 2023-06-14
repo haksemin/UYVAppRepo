@@ -31,13 +31,14 @@ export default function MainScreen() {
     <>
       <MainTemp />
       
-      <ScrollView bounces={false} stickyHeaderIndices={[2]}>
+      <ScrollView contentContainerStyle={{ flexGrow: 1 }} bounces={false} stickyHeaderIndices={[2]}>
         <View>
+          
           <Image source={require('../../images/Vector.png')} style={{ flex: 1, position: 'absolute' }} />
+          
         </View>
-
         <View style={{flex:1}}>
-          <Carousel />
+        <Carousel />
         </View>
         
         <View style={{flex:1}}>

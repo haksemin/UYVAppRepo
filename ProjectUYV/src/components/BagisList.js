@@ -9,9 +9,9 @@ const nonselectedColorForText = "#163E6C";
 export default function BagisList({ categories, selectedCategory, onCategorySelect }) {
   return (
     <View style={{ padding: 0 }}>
-        <View style={{ height: 60, marginBottom: 25 }}>
-            <Text style={{left:15}} >Bağış Listesi</Text>
-            <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+        <View style={{ height: 70, marginBottom: 25,backgroundColor:"white"}}>
+            <Text style={{left:15, fontFamily: "OpenSans-Bold",color:"#163e6c"}} >Bağış Listesi</Text>
+            <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} >
                 {categories.map((category, index) => (
                 <TouchableOpacity key={index} onPress={() => onCategorySelect(category)}>
                     <View style={{ 
