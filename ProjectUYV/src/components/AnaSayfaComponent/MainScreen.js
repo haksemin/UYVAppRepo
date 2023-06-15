@@ -11,6 +11,8 @@ export default function MainScreen() {
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(null);
 
+
+
   useEffect(() => {
     axios.get('https://websolist.com/testapi')
       .then(response => {
@@ -27,16 +29,16 @@ export default function MainScreen() {
     setSelectedCategory(category);
   }
 
+
+
   return (
     <>
       <MainTemp />
+      <View >
+      <Image source={require('../../images/Vector.png')} style={{ flex: 1, position: 'absolute' , resizeMode:"cover" ,width:"100%"}} />
+      </View>
       
-      <ScrollView contentContainerStyle={{ flexGrow: 1 }} bounces={false} stickyHeaderIndices={[2]}>
-        <View>
-          
-          <Image source={require('../../images/Vector.png')} style={{ flex: 1, position: 'absolute' }} />
-          
-        </View>
+      <ScrollView contentContainerStyle={{ flexGrow: 1 }} bounces={false} stickyHeaderIndices={[1]}>
         <View style={{flex:1}}>
         <Carousel />
         </View>
