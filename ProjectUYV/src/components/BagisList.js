@@ -9,7 +9,7 @@ const nonselectedColorForText = "#163E6C";
 export default function BagisList({ categories, selectedCategory, onCategorySelect }) {
   return (
     <View style={{ padding: 0 }}>
-        <View style={{ height: 70, marginBottom: 25,backgroundColor:"white"}}>
+        <View style={{ height: 80, paddingTop: 10,alignContent:"center"}}>
             <Text style={{left:15, fontFamily: "OpenSans-Bold",color:"#163e6c"}} >Bağış Listesi</Text>
             <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} >
                 {categories.map((category, index) => (
