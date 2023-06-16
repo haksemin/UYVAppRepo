@@ -18,8 +18,16 @@ const Mainstyles = StyleSheet.create({
     backgroundColor:'white',
     height: 72,
     justifyContent:"center",
-
-  },
+    shadowColor: "#000", 
+    shadowOffset: {
+        width: 0,
+        height: 2,
+    },
+    shadowOpacity: 0.25, 
+    shadowRadius: 3.84, 
+    elevation: 5, 
+    zIndex: 1,  // Bu satırı ekleyin
+},
   content: {
     flex: 1,
     backgroundColor: '#F5F5F5',

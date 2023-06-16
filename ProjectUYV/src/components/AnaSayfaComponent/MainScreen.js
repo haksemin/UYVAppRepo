@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { View, Image, Dimensions, ScrollView } from 'react-native';
 import axios from 'axios';
 import MainTemp from './MainTemp';
-import Mainstyles from './MainStyles';
 import Carousel from '../Carousel';
 import BagisList from '../BagisList';
 import DonateItemsList from '../DonateItemsList';
@@ -35,7 +34,15 @@ export default function MainScreen() {
     <>
       <MainTemp />
       <View >
-      <Image source={require('../../images/Vector.png')} style={{ flex: 1, position: 'absolute' , resizeMode:"cover" ,width:"100%"}} />
+      <Image source={require('../../images/Vector.png')} 
+        style={{ 
+        flex: 1, 
+        position: 'absolute', 
+        resizeMode:"cover",
+        width:"100%",
+        backgroundColor: 'white' // Buraya arkaplan rengini ekleyin.
+    }} 
+/>
       </View>
       
       <ScrollView contentContainerStyle={{ flexGrow: 1 }} bounces={false} stickyHeaderIndices={[1]}>
