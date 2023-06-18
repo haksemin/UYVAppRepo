@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { View, Image, Dimensions, ScrollView } from 'react-native';
+import { View, Image, Dimensions, ScrollView, Text } from 'react-native';
 import axios from 'axios';
 import MainTemp from './MainTemp';
 import Carousel from '../Carousel';
 import BagisList from '../BagisList';
 import DonateItemsList from '../DonateItemsList';
+import { SCREEN_WIDTH } from '@gorhom/bottom-sheet';
 
 export default function MainScreen() {
   const [categories, setCategories] = useState([]);
@@ -29,7 +30,9 @@ export default function MainScreen() {
   const handleScroll = (event) => {
     const offsetY = event.nativeEvent.contentOffset.y;
     setIsSticky(offsetY > 220);  // Sticky durumunu güncelle
-  }
+  };
+
+  const SCREEN_WIDTH = SCREEN_WIDTH;
 
   return (
     <>
@@ -45,6 +48,8 @@ export default function MainScreen() {
           backgroundColor: 'white'
         }}/>
       </View>
+
+      
       
       <ScrollView 
         contentContainerStyle={{ flexGrow: 1 }} 
@@ -64,6 +69,12 @@ export default function MainScreen() {
           <DonateItemsList items={selectedCategory?.donateItems} />
         </View>
       </ScrollView>
+
+      <View style={{position:"absolute",width:"100%", height:155,backgroundColor:"white",bottom:0,borderTopLeftRadius:15,borderTopRightRadius:15,}}>
+        <View style={{height:50,width:"100%",backgroundColor:"#163E6C",borderTopLeftRadius:15,borderTopRightRadius:15,position:"absolute"}}>
+          <Text style={{ fontFamily: "OpenSans-SemiBold",fontSize: 16, fontWeight: 700, color:"white",margin:15}}>Destek Hattı</Text>
+        </View>
+      </View>
      
     </>
   );
