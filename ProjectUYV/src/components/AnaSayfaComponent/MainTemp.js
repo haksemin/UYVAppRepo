@@ -12,13 +12,13 @@ const MyStatusBar = ({backgroundColor, ...props}) => (
   </View>
 );
 
-export default function MainTemp(){
+export default function MainTemp({ toggleModal }){
   return (
     <>
       <MyStatusBar backgroundColor="white" barStyle="dark-content" />
       <View style={Mainstyles.appBar}>
         <Image source={require("../../images/UYVLogo.png")} style={{position:"absolute",left:15}}></Image>
-        <TouchableOpacity style={{position:"absolute",height:42,width:42 ,right:15}}>
+        <TouchableOpacity style={{position:"absolute",height:42,width:42 ,right:15}} onPress={toggleModal}>
           <Image source={require("../../images/Destek.png")} style={{height:"100%",width:"100%"}}></Image>
         </TouchableOpacity>
       </View>
