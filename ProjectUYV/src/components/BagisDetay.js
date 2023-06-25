@@ -3,12 +3,10 @@ import { Text } from "react-native";
 import MainTemp from "./AnaSayfaComponent/MainTemp";
 
 
-export default function NewScript(){
+export default function BagisDetay(){
 
     return(
-        <MainTemp>
-            <Text>merhaba Dostum</Text>
-        </MainTemp>
+        <MainTemp></MainTemp>
         
     )
 }
