@@ -18,15 +18,14 @@ const Mainstyles = StyleSheet.create({
     backgroundColor:'white',
     height: 72,
     justifyContent:"center",
-    shadowColor: "#000", 
     shadowOffset: {
-        width: 0,
-        height: 2,
-    },
-    shadowOpacity: 0.25, 
-    shadowRadius: 3.84, 
-    elevation: 5, 
-    zIndex: 1,  // Bu satırı ekleyin
+      width: 0, // Gölgenin yatayda görünmesini engelleyin.
+      height: 10, // Gölgenin aşağı doğru kaymasını sağlar.
+  },
+  shadowOpacity: 0.05, 
+  shadowRadius: 3.84, 
+  elevation: 5, 
+  zIndex: 1,
 },
   content: {
     flex: 1,

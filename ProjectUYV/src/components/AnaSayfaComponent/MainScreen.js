@@ -62,6 +62,7 @@ export default function MainScreen() {
         bounces={false} 
         stickyHeaderIndices={[1]}
         onScroll={handleScroll}  // onScroll özelliği ekle
+        scrollEventThrottle={16}
       >
         <View style={{flex:1}}>
           <Carousel />

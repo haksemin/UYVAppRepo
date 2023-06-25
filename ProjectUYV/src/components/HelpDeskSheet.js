@@ -2,6 +2,8 @@ import React from "react"
 import { View, Image, Text, TouchableOpacity } from 'react-native';
 import Modal from 'react-native-modal';
 
+
+
 export default function HelpDeskSheet({isVisible, toggleModal}){
     return(
     <Modal isVisible={isVisible} style={{ justifyContent: 'flex-end', margin: 0 }}>
@@ -16,14 +18,14 @@ export default function HelpDeskSheet({isVisible, toggleModal}){
 
         <View style={{backgroundColor:"white",position:"absolute",width:"100%",height:105,bottom:0,justifyContent:"center",flexDirection:"row"}}>
         <TouchableOpacity>
-          <View style={{backgroundColor:"#25D366",width:165,height:60,borderRadius:10, justifyContent:"center",alignContent:"center",margin:15,bottom:-15,flexDirection:"row",alignItems:"center"}}>
+          <View style={{backgroundColor:"#25D366",width:165,height:60,borderRadius:10, justifyContent:"center",alignContent:"center",margin:7,bottom:-15,flexDirection:"row",alignItems:"center"}}>
             <Image source={require("../images/wpicon.png")} style={{height:16,width:16,left:0,margin:5}}></Image>
             <Text style={{ fontFamily: "OpenSans-SemiBold",fontSize: 16, fontWeight: 600, color:"white",left:0,margin:5}}>WhatsApp</Text>
           </View>
           </TouchableOpacity>
 
           <TouchableOpacity>
-          <View style={{backgroundColor:"#163E6C",width:165,height:60,borderRadius:10, justifyContent:"center",alignContent:"center",margin:15,bottom:-15,flexDirection:"row",alignItems:"center"}}>
+          <View style={{backgroundColor:"#163E6C",width:165,height:60,borderRadius:10, justifyContent:"center",alignContent:"center",margin:7,bottom:-15,flexDirection:"row",alignItems:"center"}}>
             <Image source={require("../images/phoneicon.png")} style={{height:16,width:16,left:0,margin:5}}></Image>
             <Text style={{ fontFamily: "OpenSans-SemiBold",fontSize: 16, fontWeight: 600, color:"white",left:0,margin:5}}>Telefon</Text>
           </View>
