@@ -6,6 +6,7 @@ import Carousel from '../Carousel';
 import BagisList from '../BagisList';
 import DonateItemsList from '../DonateItemsList';
 import HelpDeskSheet from '../HelpDeskSheet';
+import { useNavigation } from '@react-navigation/native';
 
 export default function MainScreen() {
   const [categories, setCategories] = useState([]);
@@ -13,6 +14,8 @@ export default function MainScreen() {
   const [isSticky, setIsSticky] = useState(false);  // Sticky durumu için yeni durum değişkeni
   const [modalVisible, setModalVisible] = useState(false); // New State for modal visibility
 
+  const navigation = useNavigation();
+  
   const toggleModal = () => {
     setModalVisible(!modalVisible);
   }
@@ -31,6 +34,12 @@ export default function MainScreen() {
   const handleCategorySelect = (category) => {
     setSelectedCategory(category);
   }
+
+ 
+
+  const handleCardPress = (item) => {
+    navigation.navigate('Feed', { itemId: item.id, itemImage: item.image });
+  };
 
   const handleScroll = (event) => {
     const offsetY = event.nativeEvent.contentOffset.y;
@@ -61,7 +70,7 @@ export default function MainScreen() {
         contentContainerStyle={{ flexGrow: 1 }} 
         bounces={false} 
         stickyHeaderIndices={[1]}
-        onScroll={handleScroll}  // onScroll özelliği ekle
+        onScroll={handleScroll}  // onScroll özelliği
         scrollEventThrottle={16}
       >
         <View style={{flex:1}}>
@@ -73,7 +82,7 @@ export default function MainScreen() {
         </View>
 
         <View style={{flex:1}}>
-          <DonateItemsList items={selectedCategory?.donateItems} />
+          <DonateItemsList items={selectedCategory?.donateItems} cardpress={handleCardPress}/>
         </View>
       </ScrollView>
 
