@@ -1,34 +1,121 @@
-import React from "react";
-import { Text , ScrollView, useEffect, Image,Dimensions} from "react-native"; 
+import React, { useState } from 'react';
+import { Text, ScrollView, Image, Dimensions, View, TouchableOpacity } from "react-native";
 import MainTemp from "./AnaSayfaComponent/MainTemp";
-import HTML from "react-native-render-html"
-import CardBagis from "./CardBagis";
-import dummyhtnl from "./dummyhtml.json"
+import HTML from "react-native-render-html";
+import dummyhtml from "./dummyhtml.json";
+import HelpDeskSheet from './HelpDeskSheet';
+
 
 const screenWidth = Dimensions.get('window').width;
+const buttonColorRed = '#E74C3C';
+
+export default function BagisDetay({ route,navigation }) {
+  const [modalVisible, setModalVisible] = useState(false);
+
+  const toggleModal = () => {
+    setModalVisible(!modalVisible);
+  };
+
+  function goBack() {
+    if (navigation.canGoBack()) {
+      navigation.goBack();
+    }
+  }
+
+  const HTMLContent = dummyhtml.dummy;
+  //bu kısımda gelen data yer alacak
 
 
-const HTMLContent = dummyhtnl.dummy
-//bu kısımda gelen html datası APIdan gelecek. Şu an dummy data olarak geliyor.
+  //sticky durumu kontrolü ve diğer stickyler
+  const [isSticky, setIsSticky] = useState(false);
+  const handleScroll = (event) => {
+    const offsetY = event.nativeEvent.contentOffset.y;
+    setIsSticky(offsetY > 220);
+  };
 
+  //hangi item çekilmiş
+  const { itemId, itemImage, itemBaslik } = route.params;
 
-export default function BagisDetay({route}){
+  return (
+    <>
+      <MainTemp toggleModal={toggleModal} goBack={goBack}/>
 
-    const { itemId, itemImage } = route.params;
+      <View>
+        <Image
+          source={require('.././images/Vector.png')}
+          style={{
+            flex: 1,
+            position: 'absolute',
+            resizeMode: "cover",
+            width: "100%",
+            backgroundColor: 'white'
+          }}
+        />
+      </View>
 
-    return(
-        <>
-      <MainTemp></MainTemp>
-      <ScrollView style={{marginLeft:15, marginRight:15}}>
-      <Image source={{ uri: itemImage }} style={{width: screenWidth -30,
-        height: 215,
-        margin:15,
-        alignSelf:"center",
-        borderRadius: 10,}} />
-        <HTML source={{ html: HTMLContent }}></HTML>
+      <ScrollView
+        style={{ marginLeft: 15, marginRight: 15 }}
+        bounces={false}
+        stickyHeaderIndices={[1]}
+        onScroll={handleScroll}
+        scrollEventThrottle={16}
+        showsVerticalScrollIndicator={false}
+      >
+        <Image
+          source={{ uri: itemImage }}
+          style={{
+            width: screenWidth - 30,
+            height: 215,
+            alignSelf: "center",
+            borderRadius: 10,
+            marginTop: 15
+          }}
+        />
+
+        <View style={{ flex: 1, backgroundColor: isSticky ? "white" : "transparent" }}>
+          <Text
+            style={{
+              fontFamily: "OpenSans-Bold",
+              color: "#163E6C",
+              fontSize: 16,
+              fontWeight: 'bold',
+              marginTop: 15,
+              marginBottom: 15
+            }}
+          >
+            {itemBaslik}
+          </Text>
+        </View>
+
+        <HTML source={{ html: HTMLContent }} contentWidth={screenWidth - 30} />
+
       </ScrollView>
-    </>
 
-        
-    )
+      <TouchableOpacity
+        style={{
+          height: 60,
+          backgroundColor: buttonColorRed,
+          justifyContent: "center",
+          borderRadius: 10,
+          width: screenWidth - 30,
+          alignSelf: "center",
+          bottom: 15
+        }}
+      >
+        <Text
+          style={{
+            fontFamily: "OpenSans-Bold",
+            fontSize: 14,
+            color: "white",
+            fontWeight: 'bold',
+            textAlign: "center"
+          }}
+        >
+          {itemBaslik}
+        </Text>
+      </TouchableOpacity>
+      <HelpDeskSheet isVisible={modalVisible} toggleModal={toggleModal} />
+
+    </>
+  );
 }

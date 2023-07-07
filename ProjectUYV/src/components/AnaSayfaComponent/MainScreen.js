@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Image, ScrollView, Text, TouchableOpacity } from 'react-native';
+import { View, Image, ScrollView, Text, TouchableOpacity,Dimensions } from 'react-native';
 import axios from 'axios';
 import MainTemp from './MainTemp';
 import Carousel from '../Carousel';
@@ -13,9 +13,10 @@ export default function MainScreen() {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [isSticky, setIsSticky] = useState(false);  // Sticky durumu için yeni durum değişkeni
   const [modalVisible, setModalVisible] = useState(false); // New State for modal visibility
-
+  const SCREEN_WIDTH = Dimensions.get('window').width;
   const navigation = useNavigation();
   
+  //bottomsheet
   const toggleModal = () => {
     setModalVisible(!modalVisible);
   }
@@ -36,18 +37,21 @@ export default function MainScreen() {
   }
 
  
-
+//karta basıldığında
   const handleCardPress = (item) => {
-    navigation.navigate('Feed', { itemId: item.id, itemImage: item.image });
+    navigation.navigate('BagisDetay', { itemId: item.id, itemImage: item.image, itemBaslik: item.name , buttonNamex: item.buttonName});
   };
 
+  //scrollandığında sticky duruma geçsin
   const handleScroll = (event) => {
     const offsetY = event.nativeEvent.contentOffset.y;
     setIsSticky(offsetY > 220);  // Sticky durumunu güncelle
   };
 
-  const SCREEN_WIDTH = SCREEN_WIDTH;
+  
 
+ 
+//----------------------------------------------------------------//
   return (
     <>
       <MainTemp toggleModal={toggleModal} />
@@ -72,6 +76,7 @@ export default function MainScreen() {
         stickyHeaderIndices={[1]}
         onScroll={handleScroll}  // onScroll özelliği
         scrollEventThrottle={16}
+        showsVerticalScrollIndicator={false}
       >
         <View style={{flex:1}}>
           <Carousel />

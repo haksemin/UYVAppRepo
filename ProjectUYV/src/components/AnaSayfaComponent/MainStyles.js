@@ -22,7 +22,7 @@ const Mainstyles = StyleSheet.create({
       width: 0, // Gölgenin yatayda görünmesini engelleyin.
       height: 10, // Gölgenin aşağı doğru kaymasını sağlar.
   },
-  shadowOpacity: 0.05, 
+  shadowOpacity: 0.1, 
   shadowRadius: 3.84, 
   elevation: 5, 
   zIndex: 1,
