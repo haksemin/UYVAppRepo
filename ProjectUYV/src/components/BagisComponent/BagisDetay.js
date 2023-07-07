@@ -4,16 +4,22 @@ import MainTemp from "../AnaSayfaComponent/MainTemp";
 import HTML from "react-native-render-html";
 import dummyhtml from "../dummyhtml.json";
 import HelpDeskSheet from '../HelpDeskSheet';
+import DonateSheet from '../DonateSheet';
 
 
 const screenWidth = Dimensions.get('window').width;
 const buttonColorRed = '#E74C3C';
 
-export default function BagisDetay({ route,navigation }) {
+export default function BagisDetay({ route,navigation}) {
   const [modalVisible, setModalVisible] = useState(false);
+  const [isDonateSheetVisible, setDonateSheetVisible] = useState(false);
 
   const toggleModal = () => {
     setModalVisible(!modalVisible);
+  };
+
+  const toggleDonateItemsList = () => {
+    setDonateSheetVisible(!isDonateSheetVisible);
   };
 
   function goBack() {
@@ -28,6 +34,7 @@ export default function BagisDetay({ route,navigation }) {
 
   //sticky durumu kontrolü ve diğer stickyler
   const [isSticky, setIsSticky] = useState(false);
+  
   const handleScroll = (event) => {
     const offsetY = event.nativeEvent.contentOffset.y;
     setIsSticky(offsetY > 220);
@@ -38,7 +45,7 @@ export default function BagisDetay({ route,navigation }) {
 
   return (
     <>
-      <MainTemp toggleModal={toggleModal} goBack={goBack}/>
+      <MainTemp toggleModal={toggleModal} goBack={goBack} />
 
       <View>
         <Image
@@ -100,7 +107,7 @@ export default function BagisDetay({ route,navigation }) {
           width: screenWidth - 30,
           alignSelf: "center",
           bottom: 15
-        }}
+        }} onPress={toggleDonateItemsList}
       >
         <Text
           style={{
@@ -115,7 +122,7 @@ export default function BagisDetay({ route,navigation }) {
         </Text>
       </TouchableOpacity>
       <HelpDeskSheet isVisible={modalVisible} toggleModal={toggleModal} />
-
+      <DonateSheet isVisible={isDonateSheetVisible} toggleDonateItemsList={toggleDonateItemsList} />
     </>
   );
 }
