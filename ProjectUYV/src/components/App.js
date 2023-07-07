@@ -2,7 +2,7 @@ import React  from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import MainScreen from "./AnaSayfaComponent/MainScreen";
-import BagisDetay from "./BagisDetay";
+import BagisDetay from "./BagisComponent/BagisDetay";
 import { Image } from "react-native";
 
 

@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { View, Image, ScrollView, Text, TouchableOpacity,Dimensions } from 'react-native';
 import axios from 'axios';
 import MainTemp from './MainTemp';
-import Carousel from '../Carousel';
-import BagisList from '../BagisList';
-import DonateItemsList from '../DonateItemsList';
+import Carousel from '.././BagisComponent/Carousel';
+import BagisList from '.././BagisComponent/BagisList';
+import DonateItemsList from '.././BagisComponent/DonateItemsList';
 import HelpDeskSheet from '../HelpDeskSheet';
 import { useNavigation } from '@react-navigation/native';
 

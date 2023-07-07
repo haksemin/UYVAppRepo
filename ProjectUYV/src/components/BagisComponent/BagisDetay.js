@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Text, ScrollView, Image, Dimensions, View, TouchableOpacity } from "react-native";
-import MainTemp from "./AnaSayfaComponent/MainTemp";
+import MainTemp from "../AnaSayfaComponent/MainTemp";
 import HTML from "react-native-render-html";
-import dummyhtml from "./dummyhtml.json";
-import HelpDeskSheet from './HelpDeskSheet';
+import dummyhtml from "../dummyhtml.json";
+import HelpDeskSheet from '../HelpDeskSheet';
 
 
 const screenWidth = Dimensions.get('window').width;
@@ -42,7 +42,7 @@ export default function BagisDetay({ route,navigation }) {
 
       <View>
         <Image
-          source={require('.././images/Vector.png')}
+          source={require('../../images/Vector.png')}
           style={{
             flex: 1,
             position: 'absolute',
