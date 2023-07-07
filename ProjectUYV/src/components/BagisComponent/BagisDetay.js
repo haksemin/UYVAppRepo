@@ -122,7 +122,7 @@ export default function BagisDetay({ route,navigation}) {
         </Text>
       </TouchableOpacity>
       <HelpDeskSheet isVisible={modalVisible} toggleModal={toggleModal} />
-      <DonateSheet isVisible={isDonateSheetVisible} toggleDonateItemsList={toggleDonateItemsList} />
+      <DonateSheet isVisible={isDonateSheetVisible} toggleDonateItemsList={toggleDonateItemsList} itemBaslik={itemBaslik} />
     </>
   );
 }

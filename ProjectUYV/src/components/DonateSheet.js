@@ -2,7 +2,7 @@ import React from "react";
 import { View, Image, Text, TouchableOpacity } from 'react-native';
 import Modal from "react-native-modal"
 
-export default function DonateSheet({isVisible, toggleDonateItemsList,}){
+export default function DonateSheet({isVisible, toggleDonateItemsList, itemBaslik}){
 
 
     //açma kapama için toggle kullanılıyor
@@ -10,7 +10,7 @@ export default function DonateSheet({isVisible, toggleDonateItemsList,}){
     <Modal isVisible={isVisible} style={{ justifyContent: 'flex-end', margin: 0 }}>
     <View style={{width:"100%", height:155,backgroundColor:"white",borderTopLeftRadius:15,borderTopRightRadius:15,}}>
       <View style={{height:50,width:"100%",backgroundColor:"#163E6C",borderTopLeftRadius:15,borderTopRightRadius:15,position:"absolute",justifyContent:"center"}}>
-        <Text style={{ fontFamily: "OpenSans-SemiBold",fontSize: 16, fontWeight: 700, color:"white",marginLeft:15}}>Destek Hattı</Text>
+        <Text style={{ fontFamily: "OpenSans-SemiBold",fontSize: 16, fontWeight: 700, color:"white",marginLeft:15}}>{itemBaslik}</Text>
         <TouchableOpacity style={{position:"absolute", right:0,marginRight:15}} onPress={toggleDonateItemsList}>
           <Image source={require("../images/xmark.png")}></Image>
         </TouchableOpacity>
