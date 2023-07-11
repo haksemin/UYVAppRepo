@@ -1,11 +1,11 @@
 import React from "react";
 import { View, Image, Text, TouchableOpacity , Dimensions,TextInput,KeyboardAvoidingView} from 'react-native';
 import Modal from "react-native-modal";
-import { SelectList } from 'react-native-dropdown-select-list';
-import phonecodes from "./phonecodes.json";
 import Userdatastring from "./UserInput/userdata_string";
 import Userdataint from "./UserInput/userdata_int";
 import PhoneNum from "./UserInput/userdata_phonenum";
+import DonateKindDDown from "./UserInput/DonateKindDDown";
+
 const SCREEN_WIDTH = Dimensions.get('window').width;
 export default function DonateSheet({ isVisible, toggleDonateItemsList, itemBaslik }) {
 
@@ -26,7 +26,8 @@ export default function DonateSheet({ isVisible, toggleDonateItemsList, itemBasl
           <Userdataint></Userdataint>
           <Userdatastring></Userdatastring>
           <PhoneNum></PhoneNum>
-
+          <DonateKindDDown></DonateKindDDown>
+          
         </View>
       </View>
     </Modal>

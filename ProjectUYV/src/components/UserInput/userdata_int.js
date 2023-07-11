@@ -31,7 +31,7 @@ export default function Userdataint() {
         />
         <Text style={{ position: "absolute", fontFamily: "OpenSans-Regular", fontSize: 20, fontWeight: 900, color: "#163E6C", padding: 15, right: 0 }}>₺</Text>
       </View>
-      <Button title="Gönder" onPress={handleSubmit} />
+      
     </View>
   );
 }
