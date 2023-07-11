@@ -5,17 +5,11 @@ import { SelectList } from 'react-native-dropdown-select-list';
 import phonecodes from "./phonecodes.json";
 import Userdatastring from "./UserInput/userdata_string";
 import Userdataint from "./UserInput/userdata_int";
-
+import PhoneNum from "./UserInput/userdata_phonenum";
 const SCREEN_WIDTH = Dimensions.get('window').width;
 export default function DonateSheet({ isVisible, toggleDonateItemsList, itemBaslik }) {
-  const [selectedCountry, setSelectedCountry] = React.useState("");
 
-  const countryData = phonecodes.map(country => ({
-    key: country.dial_code,
-    value: `${country.name} (${country.dial_code})`
-  }));
 
-  console.log(selectedCountry);
 
   return (
     <Modal isVisible={isVisible} style={{ justifyContent: 'flex-end', margin: 0 }}>
@@ -31,7 +25,7 @@ export default function DonateSheet({ isVisible, toggleDonateItemsList, itemBasl
           
           <Userdataint></Userdataint>
           <Userdatastring></Userdatastring>
-          
+          <PhoneNum></PhoneNum>
 
         </View>
       </View>
