@@ -1,9 +1,12 @@
 import React from "react";
-import { View, Image, Text, TouchableOpacity } from 'react-native';
+import { View, Image, Text, TouchableOpacity , Dimensions,TextInput,KeyboardAvoidingView} from 'react-native';
 import Modal from "react-native-modal";
 import { SelectList } from 'react-native-dropdown-select-list';
 import phonecodes from "./phonecodes.json";
+import Userdatastring from "./UserInput/userdata_string";
+import Userdataint from "./UserInput/userdata_int";
 
+const SCREEN_WIDTH = Dimensions.get('window').width;
 export default function DonateSheet({ isVisible, toggleDonateItemsList, itemBaslik }) {
   const [selectedCountry, setSelectedCountry] = React.useState("");
 
@@ -24,16 +27,12 @@ export default function DonateSheet({ isVisible, toggleDonateItemsList, itemBasl
           </TouchableOpacity>
         </View>
 
-        <View style={{ backgroundColor: "white", position: "absolute", width: "100%", height: 534, bottom: 0, justifyContent: "center", flexDirection: "row" }}>
-          <View style={{ top: 0 }}>
-            <SelectList
-              setSelected={val => setSelectedCountry(val)}
-              data={countryData}
-              save="key"
-              dropdownTextStyles={{ color: "black", fontSize: 20 }}
-              inputStyles={{ color: "black", fontSize: 20 }}
-            />
-          </View>
+        <View style={{ backgroundColor: "white", position: "absolute", width: "100%", height: 534, bottom: 0, alignContent: "center", flexDirection: "column" }}>
+          
+          <Userdataint></Userdataint>
+          <Userdatastring></Userdatastring>
+          
+
         </View>
       </View>
     </Modal>
