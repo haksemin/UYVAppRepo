@@ -39,7 +39,7 @@ export default function PhoneNum() {
 
   return (
     <View>
-      <View style={{ margin: 15, top: 15, left: 0 }}>
+      <View style={{ margin: 15, left: 0 }}>
         <View style={{ top: 0, left: 0, borderColor: "#B7C3D1" }}>
           <SelectList
             setSelected={val => setSelectedCountry(val)}
@@ -53,7 +53,7 @@ export default function PhoneNum() {
           />
         </View>
       </View>
-      <View style={{ width: SCREEN_WIDTH - 115, position: "absolute", height: 60, right: 0, margin: 15, top: 15, borderRadius: 10, borderColor: "#B7C3D1", borderWidth: 1, borderTopLeftRadius: 0, borderBottomLeftRadius: 0 }}>
+      <View style={{ width: SCREEN_WIDTH - 115, position: "absolute", height: 60, right: 0, margin: 15, borderRadius: 10, borderColor: "#B7C3D1", borderWidth: 1, borderTopLeftRadius: 0, borderBottomLeftRadius: 0 }}>
         <Text style={{ fontFamily: "OpenSans-Regular", fontSize: 14, fontWeight: 700, color: "#163E6C", marginTop: 5, left: 15 }}>Telefon No</Text>
         <TextInput
           style={{ textAlignVertical: "center", fontSize: 14, left: 15, paddingBottom: 5, height: 30, width: SCREEN_WIDTH - 100, color: "black" }}

@@ -106,7 +106,7 @@ export default function BagisDetay({ route,navigation}) {
           borderRadius: 10,
           width: screenWidth - 30,
           alignSelf: "center",
-          bottom: 15
+         bottom:0
         }} onPress={toggleDonateItemsList}
       >
         <Text
