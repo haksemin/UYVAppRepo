@@ -14,7 +14,7 @@ export default function DonateKindDDown(){
         
     return(
     <View>
-      <View style={{ width: SCREEN_WIDTH - 95,alignSelf:"center", height: 60, top: 15,margin:15, borderRadius: 10, borderColor: "#B7C3D1", borderWidth: 1 ,borderTopLeftRadius:0,borderBottomLeftRadius:0,position:"absolute"}}>
+      <View style={{ width: SCREEN_WIDTH - 95,alignSelf:"center", height: 60, top: 15,margin:15,}}>
       <SelectList 
           setSelected={(val) => setSelected(val)} 
           data={data} 

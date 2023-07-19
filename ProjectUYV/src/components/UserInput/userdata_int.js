@@ -24,7 +24,7 @@ export default function Userdataint() {
         <TextInput
           style={{ textAlignVertical: "center", fontSize: 14, left: 15, paddingBottom: 5, height: 30, width: SCREEN_WIDTH - 100, color: "black",fontFamily: "OpenSans-Regular", }}
           placeholder="Tutar Giriniz"
-          placeholderTextColor={"black"}
+          placeholderTextColor={"#B7C3D1"}
           value={amount}
           onChangeText={handleAmountChange}
           keyboardType="numeric"
