@@ -4,7 +4,7 @@ import { SelectList } from 'react-native-dropdown-select-list';
 const SCREEN_WIDTH = Dimensions.get('window').width;
 export default function DonateKindSSheet(){
 
-    const [selected, setSelected] = React.useState("Standart bağış");
+    const [selected, setSelected] = React.useState("Standart Bağış");
   
     
     const data = [

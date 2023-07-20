@@ -1,5 +1,5 @@
-import React from "react";
-import { View, Image, Text, TouchableOpacity , Dimensions,TextInput,KeyboardAvoidingView, ScrollView} from 'react-native';
+import React, { useState } from "react";
+import { View, Image, Text, TouchableOpacity, Dimensions, KeyboardAvoidingView, ScrollView } from 'react-native';
 import Modal from "react-native-modal";
 import Userdatastring from "./UserInput/userdata_string";
 import Userdataint from "./UserInput/userdata_int";
@@ -7,10 +7,15 @@ import PhoneNum from "./UserInput/userdata_phonenum";
 import DonateKindDDown from "./UserInput/DonateKindDDown";
 import DonateKindSSheet from "./UserInput/DonateKindSSheet";
 import CheckBoxComponent from "./CheckBox";
+
 const SCREEN_WIDTH = Dimensions.get('window').width;
+
 export default function DonateSheet({ isVisible, toggleDonateItemsList, itemBaslik }) {
+  const [isUserDataVisible, setUserDataVisible] = useState(false);
 
-
+  const handleCheckBoxToggle = (isChecked) => {
+    setUserDataVisible(isChecked);
+  };
 
   return (
     <Modal isVisible={isVisible} style={{ justifyContent: 'flex-end', margin: 0 }}>
@@ -23,39 +28,40 @@ export default function DonateSheet({ isVisible, toggleDonateItemsList, itemBasl
         </View>
 
         <View style={{ backgroundColor: "white", position: "absolute", width: "100%", height: 534, bottom: 0, alignContent: "center", flexDirection: "column" }}>
-          <ScrollView style={{top:15}}>
-          <Userdataint></Userdataint>
-          <DonateKindDDown></DonateKindDDown>
-          <DonateKindSSheet></DonateKindSSheet>
-          <CheckBoxComponent></CheckBoxComponent>
-          <Userdatastring></Userdatastring>
-          <PhoneNum></PhoneNum>
-          
-          <TouchableOpacity
-        style={{
-          height: 60,
-          backgroundColor: "#163E6C",
-          justifyContent: "center",
-          borderRadius: 10,
-          width: SCREEN_WIDTH - 30,
-          alignSelf: "center",
-          margin:15,
-        }} onPress={toggleDonateItemsList}
-      >
-        <Text
-          style={{
-            fontFamily: "OpenSans-Regular",
-            fontSize: 14,
-            color: "white",
-            fontWeight: 'bold',
-            textAlign: "center"
-          }}
-        >
-          Sepete Ekle
-        </Text>
-      </TouchableOpacity>
+          <ScrollView style={{ top: 15 }}>
+            <Userdataint />
+            <DonateKindDDown />
+            <DonateKindSSheet />
+            <CheckBoxComponent onToggle={handleCheckBoxToggle} />
+            {isUserDataVisible && <Userdatastring />}
+            {isUserDataVisible && <PhoneNum />}
+            {/* Rest of the components */}
+            
+            <TouchableOpacity
+              style={{
+                height: 60,
+                backgroundColor: "#163E6C",
+                justifyContent: "center",
+                borderRadius: 10,
+                width: SCREEN_WIDTH - 30,
+                alignSelf: "center",
+                margin: 15,
+              }} onPress={toggleDonateItemsList}
+            >
+              <Text
+                style={{
+                  fontFamily: "OpenSans-Regular",
+                  fontSize: 14,
+                  color: "white",
+                  fontWeight: 'bold',
+                  textAlign: "center"
+                }}
+              >
+                Sepete Ekle
+              </Text>
+            </TouchableOpacity>
           </ScrollView>
-          
+
         </View>
       </View>
     </Modal>
