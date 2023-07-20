@@ -45,11 +45,12 @@ export default function PhoneNum() {
             setSelected={val => setSelectedCountry(val)}
             data={countryData}
             save="key"
-            dropdownTextStyles={{ color: "#163E6C", fontSize: 10, borderColor: "#B7C3D1" }}
-            inputStyles={{ color: "#163E6C", fontSize: 12, borderColor: "#B7C3D1", fontFamily:"OpenSans-Regular", fontWeight:"700" }}
+            dropdownTextStyles={{ color: "#163E6C", fontSize: 12, borderColor: "#B7C3D1" }}
+            inputStyles={{ color: "#163E6C", fontSize: 12, borderColor: "#B7C3D1", fontFamily:"OpenSans-Regular", fontWeight:"500" }}
             dropdownStyles={{ borderColor: "#B7C3D1" }}
             boxStyles={{ borderColor: "#B7C3D1", borderTopEndRadius: 0, borderBottomRightRadius: 0, height: 60, width: 85 }}
             renderSelectedItem={renderSelectedItem}
+            placeholder="Ülke Seçiniz"
           />
         </View>
       </View>

@@ -6,7 +6,7 @@ import Userdataint from "./UserInput/userdata_int";
 import PhoneNum from "./UserInput/userdata_phonenum";
 import DonateKindDDown from "./UserInput/DonateKindDDown";
 import DonateKindSSheet from "./UserInput/DonateKindSSheet";
-
+import CheckBoxComponent from "./CheckBox";
 const SCREEN_WIDTH = Dimensions.get('window').width;
 export default function DonateSheet({ isVisible, toggleDonateItemsList, itemBaslik }) {
 
@@ -27,6 +27,7 @@ export default function DonateSheet({ isVisible, toggleDonateItemsList, itemBasl
           <Userdataint></Userdataint>
           <DonateKindDDown></DonateKindDDown>
           <DonateKindSSheet></DonateKindSSheet>
+          <CheckBoxComponent></CheckBoxComponent>
           <Userdatastring></Userdatastring>
           <PhoneNum></PhoneNum>
           
@@ -39,7 +40,6 @@ export default function DonateSheet({ isVisible, toggleDonateItemsList, itemBasl
           width: SCREEN_WIDTH - 30,
           alignSelf: "center",
           margin:15,
-          bottom: 0
         }} onPress={toggleDonateItemsList}
       >
         <Text
