@@ -3,6 +3,8 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import MainScreen from "./AnaSayfaComponent/MainScreen";
 import BagisDetay from "./BagisComponent/BagisDetay";
+import HatimMain from "./HatimComponents/HatimMain";
+import UserAccount from "./Account/UserAccount";
 import { Image } from "react-native";
 
 
@@ -16,7 +18,8 @@ export default function App(){
             <Tab.Navigator initialRouteName="AnaSayfa">
                 <Tab.Screen name= "AnaSayfa" component={MainScreen} options={{headerShown:false,tabBarIcon: ()=> <Image source={require(".././images/Destek.png")}></Image> }}></Tab.Screen>
                 <Tab.Screen name= "BagisDetay" component={BagisDetay} options={{headerShown:false}}></Tab.Screen>
-                
+                <Tab.Screen name= "Hatim Main" component={HatimMain}options={{headerShown:false}}></Tab.Screen>
+                <Tab.Screen name="Hesabım" component={UserAccount}options={{headerShown:false}}></Tab.Screen>
             </Tab.Navigator>
         </NavigationContainer>
 

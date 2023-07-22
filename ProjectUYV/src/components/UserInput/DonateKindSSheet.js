@@ -9,7 +9,7 @@ export default function DonateKindSSheet(){
     
     const data = [
         {key:'1', value:'Standart Bağış'},
-        {key:'2', value:'Abone Ol'}]
+        {key:'2', value:'Zekat'}]
 
         
     return(
