@@ -5,6 +5,7 @@ import MainScreen from "./AnaSayfaComponent/MainScreen";
 import BagisDetay from "./BagisComponent/BagisDetay";
 import HatimMain from "./HatimComponents/HatimMain";
 import UserAccount from "./Account/UserAccount";
+import Login from "./LoginComponent/Login";
 import { Image } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 
@@ -16,6 +17,7 @@ function MainStack() {
     <Stack.Navigator>
       <Stack.Screen name="MainScreen" component={MainScreen} options={{ headerShown: false  }} />
       <Stack.Screen name="BagisDetay" component={BagisDetay} options={{ headerShown: false  , animationEnabled:false}} />
+      <Stack.Screen name="Login" component={Login} options={{ headerShown: false  , animationEnabled:false}} />
     </Stack.Navigator>
   );
 }

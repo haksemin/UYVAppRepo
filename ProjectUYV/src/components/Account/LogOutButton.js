@@ -1,5 +1,10 @@
 import React from "react";
 import { View, Dimensions, Platform, Image,Text,TouchableOpacity } from "react-native";
+import { useNavigation } from '@react-navigation/native';
+
+
+
+
 
 
 const screenWidth = Dimensions.get("window").width;
@@ -16,7 +21,10 @@ export default function LogOutButton() {
           elevation: 1,
         };
 
-
+        const navigation = useNavigation();
+        function YonlendirLogin(){
+            navigation.navigate("Login")
+        }
 
   return (
     <View
@@ -33,10 +41,10 @@ export default function LogOutButton() {
         ...shadowStyle, // Spread the shadow style here
       }}
     >
-        <TouchableOpacity style={{flexDirection:"row",alignItems:"center",width:"100%"}}>
+        <TouchableOpacity style={{flexDirection:"row",alignItems:"center",width:"100%"}} onPress={YonlendirLogin}>
             <Image source={require("../../images/hesabim/frame3.png")} style={{marginHorizontal:15}}></Image>
             <Text style={{fontFamily:"OpenSans-Regular",fontSize:16,fontWeight:400,color:"#163E6C"}}>Hesaptan Çık</Text>
-            <Image source={require("../../images/hesabim/right.png")} style={{position:"absolute",right:0,marginHorizontal:15}}></Image>
+            
         </TouchableOpacity>
 
     </View>
