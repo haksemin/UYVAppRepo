@@ -3,7 +3,7 @@ import { View, Dimensions, Platform, Image,Text,TouchableOpacity } from "react-n
 
 
 const screenWidth = Dimensions.get("window").width;
-export default function LanguageButton() {
+export default function LogOutButton() {
   const shadowStyle =
     Platform.OS === "ios"
       ? {
@@ -34,8 +34,8 @@ export default function LanguageButton() {
       }}
     >
         <TouchableOpacity style={{flexDirection:"row",alignItems:"center",width:"100%"}}>
-            <Image source={require("../../images/hesabim/frame2.png")} style={{marginHorizontal:15}}></Image>
-            <Text style={{fontFamily:"OpenSans-Regular",fontSize:16,fontWeight:400,color:"#163E6C"}}>Türkçe</Text>
+            <Image source={require("../../images/hesabim/frame3.png")} style={{marginHorizontal:15}}></Image>
+            <Text style={{fontFamily:"OpenSans-Regular",fontSize:16,fontWeight:400,color:"#163E6C"}}>Hesaptan Çık</Text>
             <Image source={require("../../images/hesabim/right.png")} style={{position:"absolute",right:0,marginHorizontal:15}}></Image>
         </TouchableOpacity>
 

@@ -5,6 +5,7 @@ import MainTemp from "../AnaSayfaComponent/MainTemp";
 import HelpDeskSheet from '../HelpDeskSheet';
 import AccountDetayButton from "./AccountDetayButton";
 import SavedCardsButton from "./SavedCardsButton";
+import LanguageButton from "./LanguageButton";
 import { useState } from "react";
 
 
@@ -86,7 +87,7 @@ export default function UserAccount() {
         </View>
               <AccountDetayButton></AccountDetayButton>
               <SavedCardsButton></SavedCardsButton>
-
+              <LanguageButton></LanguageButton>
       </View>
 
       <HelpDeskSheet isVisible={modalVisible} toggleModal={toggleModal} />
