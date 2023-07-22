@@ -6,6 +6,7 @@ import HelpDeskSheet from '../HelpDeskSheet';
 import AccountDetayButton from "./AccountDetayButton";
 import SavedCardsButton from "./SavedCardsButton";
 import LanguageButton from "./LanguageButton";
+import LogOutButton from "./LogOutButton";
 import { useState } from "react";
 
 
@@ -88,6 +89,7 @@ export default function UserAccount() {
               <AccountDetayButton></AccountDetayButton>
               <SavedCardsButton></SavedCardsButton>
               <LanguageButton></LanguageButton>
+              <LogOutButton></LogOutButton>
       </View>
 
       <HelpDeskSheet isVisible={modalVisible} toggleModal={toggleModal} />
