@@ -1,5 +1,4 @@
 import React from "react";
-import { SafeAreaView } from "react-native-safe-area-context";
 import { View, Image, Text, TouchableOpacity } from "react-native";
 import MainTemp from "../AnaSayfaComponent/MainTemp";
 import HelpDeskSheet from '../HelpDeskSheet';
@@ -8,10 +7,12 @@ import SavedCardsButton from "./SavedCardsButton";
 import LanguageButton from "./LanguageButton";
 import LogOutButton from "./LogOutButton";
 import { useState } from "react";
-
+import { useNavigation } from "@react-navigation/native";
 
 export default function UserAccount() {
   const [modalVisible, setModalVisible] = useState(false);
+
+  const navigation = useNavigation();
 
   const username = "Ahmet ÖZDEMİR";
   const phonenumber = "+90 541 366 0647";
@@ -52,7 +53,7 @@ export default function UserAccount() {
           </View>
           <View style={{ alignSelf: "center" }}>
           <TouchableOpacity
-            onPress={() => console.log("hello")}
+            onPress={() => console.log(navigation.navigate("BagisGecmisi"))}
             style={{
                 backgroundColor: "white",
                 marginTop: 60,

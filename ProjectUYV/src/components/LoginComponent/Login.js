@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, Image, StatusBar } from "react-native";
-
+import PhoneNum from "../UserInput/userdata_phonenum";
 const Login = () => {
   return (
     <>
@@ -30,9 +30,12 @@ const Login = () => {
             <Text style={{ fontFamily: "OpenSans-Regular", color: "white", fontSize: 24, fontWeight: 700, marginLeft: 15 }}>Giriş Yap</Text>
           </View>
           
-          <View style={{ alignSelf: "center" }}>
-          </View>
+          
         </View>
+
+        <View style={{ alignSelf: "center",width:"100%" }}>
+            <PhoneNum></PhoneNum>
+          </View>
       </View>
     </>
   );
