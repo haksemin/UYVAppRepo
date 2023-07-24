@@ -1,11 +1,18 @@
-import React from "react"
+import React,{useState} from "react"
 import { View,Text,TouchableOpacity,Image,Dimensions } from "react-native"
+import CardEdit from "./CardEdit";
 
 export default function SavedCardsComponent(){
 
+  const [modalVisiblex, setModalVisiblex] = useState(false);
+  const toggleModalx = () => {
+    setModalVisiblex(!modalVisiblex);
+  };
+
   const SCREEN_WIDTH = Dimensions.get('window').width;
     return(
-      <TouchableOpacity>
+      <>
+      <TouchableOpacity onPress={toggleModalx}>
       <View style={{margin:15,justifyContent:"center",justifyContent:"center"}}>
           <View style={{flexDirection:"column"}}>
             <Text style={{ color: "#163E6C", fontFamily: "OpenSans-Regular", fontSize: 14, fontWeight: 600, }}>
@@ -34,13 +41,11 @@ export default function SavedCardsComponent(){
                 </View>
                 
             </View>
-            
-            
-          
-        
-        
+    
       </View>
       <Image source={require("../../images/hesabim/Line.png")} style={{width:SCREEN_WIDTH-30,alignSelf:"center"}}></Image>
       </TouchableOpacity>
+      <CardEdit isVisible={modalVisiblex} toggleModalx={toggleModalx}></CardEdit>
+      </>
     )
 }

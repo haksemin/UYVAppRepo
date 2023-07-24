@@ -20,18 +20,25 @@ export default function KayitliKartlarBottomSheet({ isVisible,toggleModal }) {
         </View>
 
         <View style={{ backgroundColor: "white", position: "absolute", width: "100%", height: 357, bottom: 0, alignContent: "center", flexDirection: "column" }}>
-          <ScrollView style={{ top: 15 }}>
-            <SavedCardsComponent></SavedCardsComponent>
-            <SavedCardsComponent></SavedCardsComponent>
-            <SavedCardsComponent></SavedCardsComponent>
-            <SavedCardsComponent></SavedCardsComponent>
-            <SavedCardsComponent></SavedCardsComponent>
-            <SavedCardsComponent></SavedCardsComponent>
-            <SavedCardsComponent></SavedCardsComponent>
-            <SavedCardsComponent></SavedCardsComponent>
+          <View style={{height:270}}>
+            <ScrollView style={{ top: 15 }} showsVerticalScrollIndicator={false}>
+              <SavedCardsComponent></SavedCardsComponent>
+              <SavedCardsComponent></SavedCardsComponent>
+              <SavedCardsComponent></SavedCardsComponent>
+              <SavedCardsComponent></SavedCardsComponent>
+              <SavedCardsComponent></SavedCardsComponent>
+              <SavedCardsComponent></SavedCardsComponent>
+              <SavedCardsComponent></SavedCardsComponent>
+              <SavedCardsComponent></SavedCardsComponent>
 
-            
-          </ScrollView>
+              
+            </ScrollView>
+          </View>
+          <TouchableOpacity>
+            <View style={{backgroundColor:"#163E6C",width:SCREEN_WIDTH-30,height:60,margin:15,borderRadius:10,alignItems:"center",justifyContent:"center"}}>
+            <Text style={{ fontFamily: "OpenSans-SemiBold", fontSize: 16, fontWeight: 600, color: "white", }}>Yeni Kart Ekle</Text>
+            </View>
+            </TouchableOpacity>
 
         </View>
       </View>
