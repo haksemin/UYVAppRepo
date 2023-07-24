@@ -23,9 +23,13 @@ export default function UserAccount() {
     setModalVisible(!modalVisible);
   };
 
+  function goBacktoMainPage(){
+      navigation.navigate("MainScreen")
+  }
+
   return (
     <>
-      <MainTemp toggleModal={toggleModal}></MainTemp>
+      <MainTemp toggleModal={toggleModal} goBack={goBacktoMainPage}></MainTemp>
 
       <View>
         <Image
@@ -53,7 +57,7 @@ export default function UserAccount() {
           </View>
           <View style={{ alignSelf: "center" }}>
           <TouchableOpacity
-            onPress={() => console.log(navigation.navigate("BagisGecmisi"))}
+            onPress={() => (navigation.navigate("BagisGecmisi"))}
             style={{
                 backgroundColor: "white",
                 marginTop: 60,

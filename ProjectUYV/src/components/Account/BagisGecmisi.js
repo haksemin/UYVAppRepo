@@ -1,15 +1,18 @@
 import React, { useState } from "react";
-import { View, Image, Text, TouchableOpacity } from "react-native";
+import { View, Image, Text, TouchableOpacity,Dimensions } from "react-native";
 import MainTemp from "../AnaSayfaComponent/MainTemp";
 import HelpDeskSheet from '../HelpDeskSheet';
 import PhoneNum from "../UserInput/userdata_phonenum";
+import { useNavigation } from "@react-navigation/native";
 
 export default function BagisGecmisi() {
 
   const BagisSayisi = 16;
 
+  const SCREEN_WIDTH = Dimensions.get('window').width;
   const [modalVisible, setModalVisible] = useState(false);
   const [isTekSeferlik, setIsTekSeferlik] = useState(true); // Durumu takip etmek için state eklendi
+  const navigation = useNavigation();
 
   const toggleModal = () => {
     setModalVisible(!modalVisible);
@@ -23,9 +26,14 @@ export default function BagisGecmisi() {
     setIsTekSeferlik(false);
   };
 
+
+  function goBacktoMain() {
+    navigation.navigate("Hesabım");
+    }
+  
   return (
     <>
-      <MainTemp toggleModal={toggleModal} />
+      <MainTemp toggleModal={toggleModal} goBack={goBacktoMain} />
 
       <View>
         <Image
@@ -44,7 +52,7 @@ export default function BagisGecmisi() {
         <Image source={require("../../images/hesabim/ustpng.png")} style={{ width: "100%", top: 0 }} />
         <View style={{ position: "absolute", top: 15, flexDirection: "column", width: "100%" }}>
           <View style={{ flexDirection: "row", margin: 15, alignItems: "center" }}>
-            <Image source={require("../../images/hesabim/userx.png")} style={{ width: 27, height: 30 }} />
+            <Image source={require("../../images/hesabim/handdollar.png")} style={{ width: 34, height: 30 }} />
             <Text style={{ fontFamily: "OpenSans-Regular", color: "white", fontSize: 24, fontWeight: 700, marginLeft: 15 }}>Bağış Geçmişi</Text>
           </View>
 
@@ -118,17 +126,40 @@ export default function BagisGecmisi() {
         </View>
       </View>
 
-      {/* Gösterilecek kısım için koşul eklemesi */}
+      {/* Gösterilecek kısım için koşul*/}
       {isTekSeferlik ? (
         <View>
-          <Text style={{ color: "#163E6C", fontFamily: "OpenSans-Regular", fontSize: 14, fontWeight: 600, margin: 15 }}>
-            Tek Seferlik Bağış "{BagisSayisi}"
+          <Text style={{ color: "#163E6C", fontFamily: "OpenSans-Regular", fontSize: 14, fontWeight: 700, marginLeft: 15,marginTop:15,marginBottom:5 }}>
+            Tek Seferlik Bağış ({BagisSayisi})
           </Text>
+
+          <View>
+            <View>
+              <Image source={require("../../images/hesabim/Line.png")} style={{width:SCREEN_WIDTH-30,alignSelf:"center"}}></Image>
+              <View style={{margin:15,justifyContent:"center"}}>
+                <Text style={{ color: "#163E6C", fontFamily: "OpenSans-Regular", fontSize: 14, fontWeight: 600, }}>
+                  Genel Bağış
+                </Text>
+                <View style={{flexDirection:"row",alignItems:"center",marginTop:5}}>
+                  <Image source={require("../../images/hesabim/calendar.png")} style={{width:11,height:12,}}></Image>
+                  <Text style={{ color: "#163E6C", fontFamily: "OpenSans-Regular", fontSize: 12, fontWeight: 400,marginHorizontal:5 }}>
+                  12.08.2023
+                  </Text>
+                </View>
+                <View style={{right:0,position:"absolute",alignSelf:"center",justifyContent:"center",flexDirection:"column",alignContent:"center"}}>
+                  <Text style={{ color: "#77A52C", fontFamily: "OpenSans-Regular", fontSize: 18, fontWeight: 700,}}>
+                    200₺
+                  </Text>
+                </View>
+              </View>
+            </View>
+          </View>
+
         </View>
       ) : (
         <View>
-          <Text style={{ color: "#163E6C", fontFamily: "OpenSans-Regular", fontSize: 14, fontWeight: 600, margin: 15 }}>
-            Abonelikler "{BagisSayisi}"
+          <Text style={{ color: "#163E6C", fontFamily: "OpenSans-Regular", fontSize: 14, fontWeight: 700, margin: 15 }}>
+            Abonelikler ({BagisSayisi})
           </Text>
         </View>
       )}
