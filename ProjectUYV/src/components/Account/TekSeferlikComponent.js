@@ -1,6 +1,8 @@
 import React from "react"
-import { View,Image,Text } from "react-native"
+import { View,Image,Text,Dimensions } from "react-native"
 export default function TekSeferlikComponent(){
+
+  const SCREEN_WIDTH = Dimensions.get('window').width;
 
 
     return(
@@ -19,7 +21,7 @@ export default function TekSeferlikComponent(){
             </View>
             <View style={{right:0,position:"absolute",alignSelf:"center",justifyContent:"center",flexDirection:"column",alignContent:"center"}}>
               <Text style={{ color: "#77A52C", fontFamily: "OpenSans-Regular", fontSize: 18, fontWeight: 700,}}>
-                200₺
+                200 ₺
               </Text>
             </View>
           </View>
