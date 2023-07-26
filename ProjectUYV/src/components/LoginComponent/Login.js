@@ -1,14 +1,10 @@
 import React from "react";
-<<<<<<< Updated upstream
-import { View, Text, Image, StatusBar } from "react-native";
-import PhoneNum from "../UserInput/userdata_phonenum";
-=======
 import { View, Text, Image, StatusBar,TouchableOpacity,Dimensions } from "react-native";
 import PhoneNum from "../UserInput/userdata_phonenum";
 import PasswordBox from "../UserInput/PasswordBox";
 import { useNavigation } from "@react-navigation/native";
 const SCREEN_WIDTH = Dimensions.get('window').width;
->>>>>>> Stashed changes
+
 const Login = () => {
   const navigation = useNavigation();
   return (
@@ -41,12 +37,11 @@ const Login = () => {
           
           
         </View>
-<<<<<<< Updated upstream
+
 
         <View style={{ alignSelf: "center",width:"100%" }}>
-            <PhoneNum></PhoneNum>
+            
           </View>
-=======
         <View>
           <View style={{alignItems:'center'}}>
             <Image
@@ -93,7 +88,7 @@ const Login = () => {
 
           </View>
           
->>>>>>> Stashed changes
+
       </View>
     </>
   );

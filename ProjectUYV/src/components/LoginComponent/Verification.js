@@ -69,6 +69,8 @@ const Verification = () => {
               </View>
               </TouchableOpacity>
           <View>
+            
+          
           <View style={{width:60,height:70,flexDirection:'column',justifyContent:'center',alignItems:'center',borderRadius:10,borderWidth:1,borderColor:'#B7C3D1',marginTop:-375,marginLeft:50}}>
             <TextInput
             style={{textAlignVertical:'center',fontSize:28,padding:0}}
@@ -91,8 +93,8 @@ source={require('../../images/mobile.png')}
 style={{width:12,height:16,marginTop:30,marginLeft:115}}
 
 />
-<Text style={{color:'#163E6C',textAlign:'center',fontFamily:'OpenSans-Regular',fontSize:14,fontWeight:400,marginTop:100}}>Numaralı telefona gönderilen doğrulama kodunu yukarıdaki alana yazmalısın.</Text>
-            </View>  
+            </View>
+            
 
           
           </View>
