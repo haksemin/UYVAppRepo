@@ -32,7 +32,7 @@ export default function DonateSheet({ isVisible, toggleDonateItemsList, itemBasl
             <Userdataint />
             <DonateKindDDown />
             <DonateKindSSheet />
-            <CheckBoxComponent onToggle={handleCheckBoxToggle} />
+            <CheckBoxComponent onToggle={handleCheckBoxToggle} checkBoxText={"Başkasının adına bağış yapmak istiyorum"} />
             {isUserDataVisible && <Userdatastring />}
             {isUserDataVisible && <PhoneNum />}
             {/* Rest of the components */}

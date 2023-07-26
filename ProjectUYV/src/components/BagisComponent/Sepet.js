@@ -4,12 +4,14 @@ import HelpDeskSheet from '../HelpDeskSheet';
 import { useNavigation } from "@react-navigation/native";
 import { View,Image,Text,TouchableOpacity,Dimensions, ScrollView } from "react-native";
 import SepetComponent from "./SepetComponent";
+import OdemeBilgileriSheet from "./OdemeBilgileriSheet";
 
 export default function Sepet(){
 
   const screenWidth = Dimensions.get('window').width;
     const sepeticisayi = 4;
     const [modalVisible, setModalVisible] = useState(false);
+    const [modalVisiblex, setModalVisiblex] = useState(false);
     const navigation = useNavigation();
     const toggleModal = () => {
         setModalVisible(!modalVisible);};
@@ -17,6 +19,11 @@ export default function Sepet(){
       function goBacktoMainPage(){
           navigation.navigate("MainScreen")
       }
+
+
+      const toggleModalx = () => {
+        setModalVisiblex(!modalVisiblex);
+      };
 
     
 
@@ -64,18 +71,25 @@ export default function Sepet(){
             
             </View>
 
-            <View style={{height:70,width:screenWidth-30}}>
-              <View style={{flexDirection:"row"}}>
-              <Text style={{color:"#163E6C",fontSize:16,fontWeight:700,marginLeft:5}}> Toplam Tutar:</Text>
-              <View style={{position:"absolute"}}>  
-                <Text style={{color:"#77A52C",fontSize:24,fontWeight:700}}> 2.650</Text>
+            <View style={{height:100,width:screenWidth-30,flexDirection:"column"}}>
+              <View style={{flexDirection:"row",alignItems:"center"}}>
+              <Text style={{color:"#163E6C",fontSize:16,fontWeight:700,marginLeft:15,marginTop:5}}> Toplam Tutar:</Text>
+              <View style={{position:"absolute",right:0}}>  
+                <Text style={{color:"#77A52C",fontSize:24,fontWeight:700,}}> 2.650</Text>
               </View>
               
+                
               </View>
+              <TouchableOpacity onPress={toggleModalx}>
+              <View style={{backgroundColor:"#163E6C",width:screenWidth-30,height:60,marginHorizontal:15,marginVertical:5,borderRadius:10,alignItems:"center",justifyContent:"center"}}>
+                  <Text style={{color:"white",fontSize:16,fontWeight:600,}}> Bağışı Tamamla</Text>
+              </View>
+              </TouchableOpacity>
                 
                 
             </View>
       <HelpDeskSheet isVisible={modalVisible} toggleModal={toggleModal} />
+      <OdemeBilgileriSheet isVisiblex={modalVisiblex} toggleModalx={toggleModalx}></OdemeBilgileriSheet>
       </>
     )
 }
