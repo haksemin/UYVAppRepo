@@ -65,7 +65,15 @@ export default function Sepet(){
             </View>
 
             <View style={{height:70,width:screenWidth-30}}>
-                <Text style={{color:"#163E6C"}}> Toplam Tutar</Text>
+              <View style={{flexDirection:"row"}}>
+              <Text style={{color:"#163E6C",fontSize:16,fontWeight:700,marginLeft:5}}> Toplam Tutar:</Text>
+              <View style={{position:"absolute"}}>  
+                <Text style={{color:"#77A52C",fontSize:24,fontWeight:700}}> 2.650</Text>
+              </View>
+              
+              </View>
+                
+                
             </View>
       <HelpDeskSheet isVisible={modalVisible} toggleModal={toggleModal} />
       </>
