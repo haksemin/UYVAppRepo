@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Image, Text, TouchableOpacity } from "react-native";
+import { View, Image, Text, TouchableOpacity,ScrollView } from "react-native";
 import MainTemp from "../AnaSayfaComponent/MainTemp";
 import HelpDeskSheet from '../HelpDeskSheet';
 import AccountDetayButton from "./AccountDetayButton";
@@ -91,10 +91,15 @@ export default function UserAccount() {
             <Image source={require("../../images/hesabim/gear.png")} style={{height:16,width:16}}></Image>
             <Text style={{fontFamily:"OpenSans-Regular",fontSize:14,fontWeight:700,color:"#163E6C",marginLeft:5}} >Ayarlar</Text>
         </View>
-              <AccountDetayButton></AccountDetayButton>
-              <SavedCardsButton></SavedCardsButton>
-              <LanguageButton></LanguageButton>
-              <LogOutButton></LogOutButton>
+      </View>
+
+      <View style={{ flex: 1 }}>
+        <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{flexGrow:1}} bounces={false} >
+          <AccountDetayButton></AccountDetayButton>
+          <SavedCardsButton></SavedCardsButton>
+          <LanguageButton></LanguageButton>
+          <LogOutButton></LogOutButton>
+        </ScrollView>
       </View>
 
       <HelpDeskSheet isVisible={modalVisible} toggleModal={toggleModal} />

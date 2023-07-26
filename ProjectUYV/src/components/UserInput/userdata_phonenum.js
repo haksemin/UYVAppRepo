@@ -24,8 +24,8 @@ export default function PhoneNum() {
   };
 
   const handleSubmit = () => {
-    // API'ye tutarı gönderme işlemini burada gerçekleştirin
-    console.log(selectedCountry, amount); // Örneğin, tutarı konsola yazdırabilirsiniz
+    // API'ye tutarı gönderme işlemi
+    console.log(selectedCountry, amount); // tutarı konsola yazdır
   };
 
   const renderSelectedItem = () => {

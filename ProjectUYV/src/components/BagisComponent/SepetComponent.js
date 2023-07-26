@@ -21,7 +21,7 @@ export default function SepetComponent(){
 
         <TouchableOpacity>
         <View style={{ alignSelf: "center" }}>
-          <View style={{height:80,width:screenWidth-30,backgroundColor:"white",borderRadius:10,marginTop:50,
+          <View style={{height:80,width:screenWidth-30,backgroundColor:"white",borderRadius:10,
           margin: 7.5,
           borderRadius: 10,
           flexDirection:"row",
@@ -31,11 +31,14 @@ export default function SepetComponent(){
                 <Image source={require("../../images/sepetcardpng.png")} style={{width:60,height:60}}></Image>
                 <View style={{marginHorizontal:15}}>
                     <Text style={{fontFamily:"OpenSans-Regular",fontSize:14,fontWeight:700,color:"#163E6C"}}>{cardtitle}</Text>
-                    <View style={{height:36,width:143,backgroundColor:"#FDEDEC",marginVertical:5,borderRadius:5,flexDirection:"row"}}>
-                        <Image source={require("../../images/xred.png")}></Image>
+                    <View style={{height:36,width:143,backgroundColor:"#FDEDEC",marginVertical:5,borderRadius:5,flexDirection:"row",justifyContent:"center",alignItems:"center"}}>
+                        <Image source={require("../../images/xred.png")} style={{marginHorizontal:5}}></Image>
                         <Text style={{fontFamily:"OpenSans-Regular",fontSize:14,fontWeight:600,color:"#E74C3C"}}>Sepetten Kaldır</Text>
                     </View>
                 </View>
+            </View>
+            <View style={{justifyContent:"center",marginHorizontal:15}}>
+              <Text style={{color:"#163E6C",fontFamily:"OpenSans-Regular",fontSize:18,fontWeight:700}}>2000 ₺ </Text>
             </View>
           </View>
         </View>
