@@ -2,7 +2,7 @@ import React,{useState} from "react";
 import MainTemp from "../AnaSayfaComponent/MainTemp";
 import HelpDeskSheet from '../HelpDeskSheet';
 import { useNavigation } from "@react-navigation/native";
-import { View,Image,Text,TouchableOpacity,Dimensions } from "react-native";
+import { View,Image,Text,TouchableOpacity,Dimensions, ScrollView } from "react-native";
 import SepetComponent from "./SepetComponent";
 
 export default function Sepet(){
@@ -43,11 +43,30 @@ export default function Sepet(){
             <Image source={require("../../images/shoppingbag.png")} style={{ width: 27, height: 30 }} />
             <Text style={{ fontFamily: "OpenSans-Regular", color: "white", fontSize: 24, fontWeight: 700, marginLeft: 15 }}>Bağış Sepetim ({sepeticisayi})</Text>
           </View>
-          <SepetComponent></SepetComponent>
-         
+          <View style={{flex:1}}>
+            
 
+          </View>
+        
         </View>
       </View>
+
+      <View style={{flex :1,marginTop:-90}}>
+              <ScrollView contentContainerStyle={{flexGrow:1}}>
+              <SepetComponent></SepetComponent>
+              <SepetComponent></SepetComponent>
+              <SepetComponent></SepetComponent>
+              <SepetComponent></SepetComponent>
+              <SepetComponent></SepetComponent>
+              <SepetComponent></SepetComponent>
+              <SepetComponent></SepetComponent>
+              </ScrollView>
+            
+            </View>
+
+            <View style={{height:70,width:screenWidth-30}}>
+                <Text style={{color:"#163E6C"}}> Toplam Tutar</Text>
+            </View>
       <HelpDeskSheet isVisible={modalVisible} toggleModal={toggleModal} />
       </>
     )

@@ -78,7 +78,7 @@ export default function BagisGecmisi() {
               }}
             >
               <View style={{ margin: 15, flexDirection: "row", justifyContent: "center" }}>
-                {/* Butonlara onPress özelliği eklendi */}
+                
                 <TouchableOpacity onPress={handleTekSeferlik}>
                   <View style={{
                     borderRadius: 30,
@@ -131,11 +131,11 @@ export default function BagisGecmisi() {
 
       {/* Gösterilecek kısım için koşul*/}
       {isTekSeferlik ? (
-        <View>
+        <View style={{flex:1}}>
           <Text style={{ color: "#163E6C", fontFamily: "OpenSans-Regular", fontSize: 14, fontWeight: 700, marginLeft: 15,marginTop:15,marginBottom:5 }}>
             Tek Seferlik Bağış ({BagisSayisi})
           </Text>
-          <ScrollView showsVerticalScrollIndicator={false} >
+          <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{flexGrow:1}} bounces={false} >
           <TekSeferlikComponent></TekSeferlikComponent>
           <TekSeferlikComponent></TekSeferlikComponent>
           <TekSeferlikComponent></TekSeferlikComponent>
