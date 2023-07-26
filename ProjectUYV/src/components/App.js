@@ -9,6 +9,7 @@ import Login from "./LoginComponent/Login";
 import BagisGecmisi from "./Account/BagisGecmisi";
 import { Image } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
+import Sepet from "./BagisComponent/Sepet";
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -35,6 +36,7 @@ export default function App() {
         />
         <Tab.Screen name="Hatim Main" component={HatimMain} options={{ headerShown: false , animationEnabled:false }} />
         <Tab.Screen name="Hesabım" component={UserAccount} options={{ headerShown: false  , animationEnabled:false}} />
+        <Tab.Screen name="Bağış Sepetim" component={Sepet} options={{ headerShown: false  , animationEnabled:false}} />
       </Tab.Navigator>
     </NavigationContainer>
   );

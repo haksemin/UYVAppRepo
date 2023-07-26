@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { View, Image, Text, TouchableOpacity, Dimensions, ScrollView } from 'react-native';
 import Modal from "react-native-modal";
-import SavedCardsComponent from "./SavedCardsComponent";
 import CardName from "../UserInput/CardName";
 
 
