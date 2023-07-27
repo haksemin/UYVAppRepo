@@ -17,7 +17,7 @@ export default function Sepet(){
         setModalVisible(!modalVisible);};
 
       function goBacktoMainPage(){
-          navigation.navigate("MainScreen")
+          navigation.navigate("AnaSayfa")
       }
 
 

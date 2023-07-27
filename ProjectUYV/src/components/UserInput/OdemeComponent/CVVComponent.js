@@ -24,7 +24,7 @@ export default function CVVComponent() {
     <View>
       <View
         style={{
-          width: SCREEN_WIDTH - 260,
+          width: SCREEN_WIDTH - 230,
           height: 60,
           borderRadius: 10,
           borderColor: "#B7C3D1",

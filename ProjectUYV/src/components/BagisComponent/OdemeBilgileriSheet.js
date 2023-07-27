@@ -20,7 +20,7 @@ export default function OdemeBilgileriSheet({ isVisiblex, toggleModalx }) {
 
   return (
     <Modal isVisible={isVisiblex} style={{ justifyContent: 'flex-end', margin: 0 }}>
-      <View style={{ width: "100%", height: 692, backgroundColor: "white", borderTopLeftRadius: 15, borderTopRightRadius: 15 }}>
+      <View style={{ width: "100%", height: 600, backgroundColor: "white", borderTopLeftRadius: 15, borderTopRightRadius: 15 }}>
         <View style={{ height: 50, width: "100%", backgroundColor: "#163E6C", borderTopLeftRadius: 15, borderTopRightRadius: 15, position: "absolute", justifyContent: "center" }}>
           <Text style={{ fontFamily: "OpenSans-SemiBold", fontSize: 16, fontWeight: 700, color: "white", marginLeft: 15 }}>Ödeme Bilgileri</Text>
           <TouchableOpacity style={{ position: "absolute", right: 0, marginRight: 15 }} onPress={toggleModalx}>
@@ -28,7 +28,8 @@ export default function OdemeBilgileriSheet({ isVisiblex, toggleModalx }) {
           </TouchableOpacity>
         </View>
 
-        <View style={{ backgroundColor: "white", position: "absolute", width: "100%", height: 647, bottom: 0, alignContent: "center", flexDirection: "column",marginTop:15 }}>  
+        <View style={{ backgroundColor: "white", position: "absolute", width: "100%", height: 550, bottom: 0, alignContent: "center", flexDirection: "column",marginTop:15 }}> 
+        <ScrollView> 
           <View style={{marginTop:15}}>
             <BagisAboneDDown></BagisAboneDDown>
             <KartListDDown></KartListDDown>
@@ -53,7 +54,10 @@ export default function OdemeBilgileriSheet({ isVisiblex, toggleModalx }) {
               <Image source={require("../../images/visamastercardbanner.png")} style={{width:345}}></Image>
             </View>
 
-            <View style={{height:100,width:SCREEN_WIDTH-30,flexDirection:"column",marginTop:30}}>
+            
+          </View>
+          </ScrollView>
+          <View style={{height:100,width:SCREEN_WIDTH-30,flexDirection:"column",marginTop:15}}>
               <View style={{flexDirection:"row",alignItems:"center"}}>
                 <Text style={{color:"#163E6C",fontSize:16,fontWeight:700,marginLeft:15,marginTop:5}}> Toplam Tutar:</Text>
                 <View style={{position:"absolute",right:0}}>  
@@ -66,7 +70,6 @@ export default function OdemeBilgileriSheet({ isVisiblex, toggleModalx }) {
                 </View>
               </TouchableOpacity>
             </View>
-          </View>
         </View>
       </View>
     </Modal>
