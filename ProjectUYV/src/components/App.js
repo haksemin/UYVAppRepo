@@ -13,6 +13,7 @@ import RegistrationScreen from "./LoginComponent/RegistrationScreen"
 import BeforeLogin from "./LoginComponent/BeforeLogin";
 import Verification from "./LoginComponent/Verification";
 import { Image } from "react-native";
+import HatimOlustur from "./HatimComponents/HatimOlustur";
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -47,6 +48,7 @@ export default function App() {
         <Stack.Screen name="BagisGecmisi" component={BagisGecmisi} options={{ headerShown: false, animationEnabled: false ,}} />
         <Stack.Screen name="RegistrationScreen" component={RegistrationScreen} options={{ headerShown: false, animationEnabled: false }} />
         <Stack.Screen name="Verification" component={Verification} options={{ headerShown: false, animationEnabled: false }} />
+        <Stack.Screen name="HatimOlustur" component={HatimOlustur} options={{ headerShown: false, animationEnabled: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

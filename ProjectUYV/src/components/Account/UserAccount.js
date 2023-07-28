@@ -24,7 +24,7 @@ export default function UserAccount() {
   };
 
   function goBacktoMainPage(){
-      navigation.navigate("MainScreen")
+      navigation.navigate("AnaSayfa")
   }
 
   return (

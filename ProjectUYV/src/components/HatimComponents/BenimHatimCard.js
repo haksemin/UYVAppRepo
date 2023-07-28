@@ -32,23 +32,14 @@ export default function BenimHatimComponent(){
                             <Image source={require("../../images/hatim/users.png")} style={{width:18,height:14}} ></Image>
                             <Text style={{color:"#163E6C",fontFamily:"OpenSans-Regular",fontSize:14,fontWeight:"400"}}> 24</Text>
                         </View>
-                        
-                        
-                        
                     </View>
-                    
-                        
-                    
                 </View>
                 <View style={{height:60,width:60,backgroundColor:"black",alignSelf:"center",marginLeft:20}}>
-
                 </View>
                     <View style={{position:"absolute",right:0,alignSelf:"flex-end",alignSelf:"center",marginRight:15}}>
                         <Image source={require("../../images/hesabim/right.png")} style={{width:9,height:12}} ></Image>
                     </View>
             </View>
-            
-            
         </View>
         </TouchableOpacity>
     )

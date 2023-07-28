@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import { View, Image, Text, TouchableOpacity,Dimensions } from "react-native";
+import { View, Image, Text, TouchableOpacity,Dimensions,ScrollView } from "react-native";
 import MainTemp from "../AnaSayfaComponent/MainTemp";
 import HelpDeskSheet from '../HelpDeskSheet';
 import BenimHatimComponent from "./BenimHatimCard";
 
 import { useNavigation } from "@react-navigation/native";
 
-import { ScrollView } from "react-native-gesture-handler";
 
 export default function HatimMain() {
 
@@ -42,11 +41,13 @@ export default function HatimMain() {
   };
 
 
-
+  function HatimOlustur(){
+    navigation.navigate("HatimOlustur")
+  }
 
 
   function goBacktoMain() {
-    navigation.navigate("Hesabım");
+    navigation.navigate("AnaSayfa");
     }
   
   return (
@@ -180,10 +181,14 @@ export default function HatimMain() {
             <BenimHatimComponent></BenimHatimComponent>
             <BenimHatimComponent></BenimHatimComponent>
             <BenimHatimComponent></BenimHatimComponent>
-            
+
 
           </ScrollView>
-          
+          <TouchableOpacity onPress={HatimOlustur}>
+          <View style={{bottom:0,width:SCREEN_WIDTH-30,height:60,backgroundColor:"#163E6C",marginBottom:10,marginHorizontal:15,borderRadius:10,justifyContent:"center"}}>
+            <Text style={{alignSelf:"center",color:"white",fontFamily:"OpenSans-Regular",fontSize:16,fontWeight:"600"}}>Hatim Oluştur  + </Text>
+          </View>
+          </TouchableOpacity>
 
         </View>
       ) :isGenel ? (
@@ -196,6 +201,7 @@ export default function HatimMain() {
             
 
           </ScrollView>
+          
         </View>
       ) : (
         <View>
