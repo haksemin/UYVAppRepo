@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { View, Image, Text, TouchableOpacity,Dimensions } from "react-native";
 import MainTemp from "../AnaSayfaComponent/MainTemp";
 import HelpDeskSheet from '../HelpDeskSheet';
+import BenimHatimComponent from "./BenimHatimCard";
 
 import { useNavigation } from "@react-navigation/native";
 
@@ -170,7 +171,16 @@ export default function HatimMain() {
             Benim Hatimlerim ({HatimSayisi})
           </Text>
           <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{flexGrow:1}} bounces={false} >
-          
+            <BenimHatimComponent></BenimHatimComponent>
+            <BenimHatimComponent></BenimHatimComponent>
+            <BenimHatimComponent></BenimHatimComponent>
+            <BenimHatimComponent></BenimHatimComponent>
+            <BenimHatimComponent></BenimHatimComponent>
+            <BenimHatimComponent></BenimHatimComponent>
+            <BenimHatimComponent></BenimHatimComponent>
+            <BenimHatimComponent></BenimHatimComponent>
+            <BenimHatimComponent></BenimHatimComponent>
+            
 
           </ScrollView>
           

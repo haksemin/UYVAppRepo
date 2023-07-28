@@ -36,7 +36,7 @@ export default function AccountDetayButton() {
         <TouchableOpacity style={{flexDirection:"row",alignItems:"center",width:"100%"}}>
             <Image source={require("../../images/hesabim/frame0.png")} style={{marginHorizontal:15}}></Image>
             <Text style={{fontFamily:"OpenSans-Regular",fontSize:16,fontWeight:400,color:"#163E6C"}}>Hesap Bilgilerim</Text>
-            <Image source={require("../../images/hesabim/right.png")} style={{position:"absolute",right:0,marginHorizontal:15}}></Image>
+            <Image source={require("../../images/hesabim/right.png")} style={{position:"absolute",right:0,marginHorizontal:15,width:9,height:12}}></Image>
         </TouchableOpacity>
 
     </View>

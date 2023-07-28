@@ -9,7 +9,7 @@ export default function SepetComponent(){
     Platform.OS === "ios"
       ? {
           shadowOffset: { width: 0, height: 0 },
-          shadowColor: "rgba(41, 23, 79, 0.05)",
+          shadowColor: "rgba(41, 23, 79, 0.08)",
           shadowOpacity: 1,
           shadowRadius: 10,
         }
