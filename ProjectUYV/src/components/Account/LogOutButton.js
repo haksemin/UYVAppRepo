@@ -23,7 +23,7 @@ export default function LogOutButton() {
 
         const navigation = useNavigation();
         function YonlendirLogin(){
-            navigation.navigate("Login")
+            navigation.navigate("BeforeLogin")
         }
 
   return (

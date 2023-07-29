@@ -9,6 +9,7 @@ import LogOutButton from "./LogOutButton";
 import { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 
+
 export default function UserAccount() {
   const [modalVisible, setModalVisible] = useState(false);
 

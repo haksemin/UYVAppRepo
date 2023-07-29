@@ -9,6 +9,12 @@ const RegistrationScreen = () => {
   const navigation = useNavigation();
   const [password, setPassword] = useState("");
   const [isChecked, setChecked] = useState(false);
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+
+  const togglePasswordVisibilty = () => {
+    setIsPasswordVisible((prev) => !prev);
+
+  };
   const handleToggle = () => {
     setChecked(!isChecked);
   };
@@ -58,10 +64,18 @@ const RegistrationScreen = () => {
           style={{ textAlignVertical: "center", fontSize: 14, left: 15, paddingBottom: 5, height: 30, width: SCREEN_WIDTH - 100, color: "black" }}
           placeholder="Şifrenizi giriniz"
           placeholderTextColor={"#B7C3D1"}
-          secureTextEntry // Bu özelliği ekleyerek şifrenin gizli kalmasını sağlarız
+          secureTextEntry={isPasswordVisible} // Bu özelliği ekleyerek şifrenin gizli kalmasını sağlarız
           value={password}
           onChangeText={setPassword} // Şifre güncellendiğinde state'i güncelleyen fonksiyon
-        /> 
+        />
+        <TouchableOpacity onPress={togglePasswordVisibilty} style={{paddingRight:15,marginLeft:350,bottom:35}}>
+          <Image
+          source={isPasswordVisible ? require("../../images/eye.png"): require("../../images/eye.png")}
+          style={{width:18,height:16}}
+          
+          />
+        
+        </TouchableOpacity>
       </View>
     </View>
     <CheckBoxComponent onToggle={handleToggle} isChecked={isChecked}></CheckBoxComponent>
