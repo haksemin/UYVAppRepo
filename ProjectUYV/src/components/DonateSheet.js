@@ -35,7 +35,7 @@ export default function DonateSheet({ isVisible, toggleDonateItemsList, itemBasl
             <CheckBoxComponent onToggle={handleCheckBoxToggle} checkBoxText={"Başkasının adına bağış yapmak istiyorum"} />
             {isUserDataVisible && <Userdatastring />}
             {isUserDataVisible && <PhoneNum />}
-            {/* Rest of the components */}
+            
             
             <TouchableOpacity
               style={{
