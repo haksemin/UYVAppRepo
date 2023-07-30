@@ -58,7 +58,7 @@ export default function PhoneNum() {
         <Text style={{ fontFamily: "OpenSans-Regular", fontSize: 14, fontWeight: 700, color: "#163E6C", marginTop: 5, left: 15 }}>Telefon No</Text>
         <TextInput
           style={{ textAlignVertical: "center", fontSize: 14, left: 15, paddingBottom: 5, height: 30, width: SCREEN_WIDTH - 100, color: "black" }}
-          placeholder="Telefon Numaranızı Giriniz"
+          placeholder="Telefon Numarası Giriniz"
           placeholderTextColor={"#B7C3D1"}
           value={amount}
           onChangeText={handleAmountChange}

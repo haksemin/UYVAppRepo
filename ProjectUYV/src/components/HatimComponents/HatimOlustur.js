@@ -5,18 +5,23 @@ import HelpDeskSheet from '../HelpDeskSheet';
 import BenimHatimComponent from "./BenimHatimCard";
 import InputBoxNew from "../UserInput/newUserInput/InputBoxNew";
 import DateTimePickerModal from 'react-native-modal-datetime-picker';
-
+import HatimDavetModal from "./HatimDavetModal";
 import { useNavigation } from "@react-navigation/native";
 
 export default function HatimOlustur() {
   const SCREEN_WIDTH = Dimensions.get('window').width;
   const [modalVisible, setModalVisible] = useState(false);
+  const [modalVisibleM,setModalVisibleM] = useState(false);
   const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
   const [selectedDate, setSelectedDate] = useState(null);
   const navigation = useNavigation();
 
   const toggleModal = () => {
     setModalVisible(!modalVisible);
+  };
+
+  const toggleModalM = () => {
+    setModalVisibleM(!modalVisibleM);
   };
 
   const toggleDatePicker = () => {
@@ -31,6 +36,10 @@ export default function HatimOlustur() {
     setSelectedDate(date);
     hideDatePicker();
   };
+
+
+
+
 
   function goBacktoMain() {
     navigation.navigate("Hatim Main");
@@ -122,7 +131,7 @@ export default function HatimOlustur() {
       </View>
 
       <View style={{ position: "absolute", bottom: 0, width: "100%" }}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={toggleModalM}>
           <View style={{ backgroundColor: "#163E6C", width: SCREEN_WIDTH - 30, height: 60, marginVertical: 15, borderRadius: 10, justifyContent: "center", alignItems: "center", alignSelf: "center", }}>
             <Text style={{ color: "white", fontFamily: "OpenSans-Regular", fontSize: 16, fontWeight: "600" }}>Hatim Oluştur / Paylaş</Text>
           </View>
@@ -130,6 +139,7 @@ export default function HatimOlustur() {
       </View>
 
       <HelpDeskSheet isVisible={modalVisible} toggleModal={toggleModal} />
+      <HatimDavetModal isVisibleM={modalVisibleM} toggleDonateItemsList={toggleModalM}></HatimDavetModal>
     </>
   )
 }

@@ -5,6 +5,7 @@ import HelpDeskSheet from '../HelpDeskSheet';
 import BenimHatimComponent from "./BenimHatimCard";
 
 import { useNavigation } from "@react-navigation/native";
+import HatimKartButonlu from "./HatimKartButonlu";
 
 
 export default function HatimMain() {
@@ -192,25 +193,37 @@ export default function HatimMain() {
 
         </View>
       ) :isGenel ? (
-        <View>
+        <View style={{flex:1}}>
           <Text style={{ color: "#163E6C", fontFamily: "OpenSans-Regular", fontSize: 14, fontWeight: 700, marginLeft: 15,marginTop:15,marginBottom:5 }}>
-            Genel ({HatimSayisi})
+            Genel Hatimler ({HatimSayisi})
           </Text>
 
-          <ScrollView showsVerticalScrollIndicator={false} >
-            
+          <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{flexGrow:1}} bounces={false}>
+            <HatimKartButonlu content={"Katıl"}></HatimKartButonlu>
+            <HatimKartButonlu content={"Katıl"}></HatimKartButonlu>
+            <HatimKartButonlu content={"Katıl"}></HatimKartButonlu>
+            <HatimKartButonlu content={"Katıl"}></HatimKartButonlu>
+            <HatimKartButonlu content={"Katıl"}></HatimKartButonlu>
+            <HatimKartButonlu content={"Katıl"}></HatimKartButonlu>
+
 
           </ScrollView>
           
         </View>
       ) : (
-        <View>
+        <View style={{flex:1}}>
           <Text style={{ color: "#163E6C", fontFamily: "OpenSans-Regular", fontSize: 14, fontWeight: 700, marginLeft: 15,marginTop:15,marginBottom:5 }}>
-            Aldıklarım ({HatimSayisi})
+            Aldığım Hatimler ({HatimSayisi})
           </Text>
 
-          <ScrollView showsVerticalScrollIndicator={false} >
-            
+          <ScrollView showsVerticalScrollIndicator={false}  contentContainerStyle={{flexGrow:1}} bounces={false}>
+          <HatimKartButonlu content={"Okuduğum Cüzler"}></HatimKartButonlu>
+          <HatimKartButonlu content={"Okuduğum Cüzler"}></HatimKartButonlu>
+          <HatimKartButonlu content={"Okuduğum Cüzler"}></HatimKartButonlu>
+          <HatimKartButonlu content={"Okuduğum Cüzler"}></HatimKartButonlu>
+          <HatimKartButonlu content={"Okuduğum Cüzler"}></HatimKartButonlu>
+          <HatimKartButonlu content={"Okuduğum Cüzler"}></HatimKartButonlu>
+          
 
           </ScrollView>
         </View>
