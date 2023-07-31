@@ -18,8 +18,9 @@ const CheckBoxComponent = ({ onToggle,checkBoxText }) => {
         ) : (
           <Image source={require('../images/CheckBoxEmpty.png')} />
         )}
-      </TouchableOpacity>
+      
       <Text style={{ fontFamily: "OpenSans-Regular", fontWeight: "400", color: "#163E6C", marginLeft: 15, fontSize: 14, alignSelf: "center" }}>{checkBoxText}</Text>
+      </TouchableOpacity>
     </View>
   );
 };

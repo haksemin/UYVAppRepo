@@ -116,7 +116,7 @@ export default function HatimOlustur() {
             </View>
             <View style={{ width: SCREEN_WIDTH - 30, margin: 15 }}>
               <Text style={{ color: "#163E6C", fontFamily: "OpenSans-Regular", fontSize: 14, fontWeight: "700" }}>Hatim Paylaşılacak Kişiler</Text>
-              <TouchableOpacity>
+              <TouchableOpacity onPress={toggleModalM}>
                 <View style={{ backgroundColor: "#E8ECF0", width: SCREEN_WIDTH - 30, height: 60, marginVertical: 15, borderRadius: 10, justifyContent: "center", alignItems: "center" }}>
                   <Text style={{ color: "#163E6C", fontFamily: "OpenSans-Regular", fontSize: 16, fontWeight: "600" }}>Kişi Ekle +</Text>
                 </View>
@@ -131,7 +131,7 @@ export default function HatimOlustur() {
       </View>
 
       <View style={{ position: "absolute", bottom: 0, width: "100%" }}>
-        <TouchableOpacity onPress={toggleModalM}>
+        <TouchableOpacity >
           <View style={{ backgroundColor: "#163E6C", width: SCREEN_WIDTH - 30, height: 60, marginVertical: 15, borderRadius: 10, justifyContent: "center", alignItems: "center", alignSelf: "center", }}>
             <Text style={{ color: "white", fontFamily: "OpenSans-Regular", fontSize: 16, fontWeight: "600" }}>Hatim Oluştur / Paylaş</Text>
           </View>
