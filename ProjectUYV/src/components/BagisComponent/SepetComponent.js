@@ -1,11 +1,10 @@
-import React from "react"
-import { View,TouchableOpacity,Dimensions,Image,Text } from "react-native";
+import React from "react";
+import { View, TouchableOpacity, Dimensions, Image, Text } from "react-native";
 
-export default function SepetComponent(){
-
-    const cardtitle= "Bağış Adı";
-    const screenWidth = Dimensions.get('window').width;
-    const shadowStyle =
+export default function SepetComponent() {
+  const cardtitle = "Bağış Adı";
+  const screenWidth = Dimensions.get('window').width;
+  const shadowStyle =
     Platform.OS === "ios"
       ? {
           shadowOffset: { width: 0, height: 0 },
@@ -17,32 +16,32 @@ export default function SepetComponent(){
           elevation: 4,
         };
 
-    return(
-
-        <TouchableOpacity>
-        <View style={{ alignSelf: "center" }}>
-          <View style={{height:80,width:screenWidth-30,backgroundColor:"white",borderRadius:10,
+  return (
+    <TouchableOpacity activeOpacity={1} onPress={() => console.log("TouchableOpacity pressed!")}>
+      <View style={{ alignSelf: "center" }}>
+        <View style={{
+          height: 80, width: screenWidth - 30, backgroundColor: "white", borderRadius: 10,
           margin: 7.5,
           borderRadius: 10,
-          flexDirection:"row",
-          ...shadowStyle,}}>
+          flexDirection: "row",
+          ...shadowStyle,
+        }}>
 
-            <View style={{margin:10,flexDirection:"row"}}>
-                <Image source={require("../../images/sepetcardpng.png")} style={{width:60,height:60}}></Image>
-                <View style={{marginHorizontal:15}}>
-                    <Text style={{fontFamily:"OpenSans-Regular",fontSize:14,fontWeight:700,color:"#163E6C"}}>{cardtitle}</Text>
-                    <View style={{height:36,width:143,backgroundColor:"#FDEDEC",marginVertical:5,borderRadius:5,flexDirection:"row",justifyContent:"center",alignItems:"center"}}>
-                        <Image source={require("../../images/xred.png")} style={{marginHorizontal:5}}></Image>
-                        <Text style={{fontFamily:"OpenSans-Regular",fontSize:14,fontWeight:600,color:"#E74C3C"}}>Sepetten Kaldır</Text>
-                    </View>
-                </View>
-            </View>
-            <View style={{justifyContent:"center",marginHorizontal:15}}>
-              <Text style={{color:"#163E6C",fontFamily:"OpenSans-Regular",fontSize:18,fontWeight:700}}>2000 ₺ </Text>
+          <View style={{ margin: 10, flexDirection: "row" }}>
+            <Image source={require("../../images/sepetcardpng.png")} style={{ width: 60, height: 60 }}></Image>
+            <View style={{ marginHorizontal: 15 }}>
+              <Text style={{ fontFamily: "OpenSans-Regular", fontSize: 14, fontWeight: 700, color: "#163E6C" }}>{cardtitle}</Text>
+              <View style={{ height: 36, width: 143, backgroundColor: "#FDEDEC", marginVertical: 5, borderRadius: 5, flexDirection: "row", justifyContent: "center", alignItems: "center" }}>
+                <Image source={require("../../images/xred.png")} style={{ marginHorizontal: 5 }}></Image>
+                <Text style={{ fontFamily: "OpenSans-Regular", fontSize: 14, fontWeight: 600, color: "#E74C3C" }}>Sepetten Kaldır</Text>
+              </View>
             </View>
           </View>
+          <View style={{ justifyContent: "center", marginHorizontal: 15 }}>
+            <Text style={{ color: "#163E6C", fontFamily: "OpenSans-Regular", fontSize: 18, fontWeight: 700 }}>2000 ₺ </Text>
+          </View>
         </View>
-        </TouchableOpacity>
-
-    )
+      </View>
+    </TouchableOpacity>
+  );
 }

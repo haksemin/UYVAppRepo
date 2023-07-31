@@ -7,6 +7,7 @@ import InputBoxNew from "../UserInput/newUserInput/InputBoxNew";
 import DateTimePickerModal from 'react-native-modal-datetime-picker';
 import HatimDavetModal from "./HatimDavetModal";
 import { useNavigation } from "@react-navigation/native";
+import EklenenKisiComponent from "./EklenenKisiComponent";
 
 export default function HatimOlustur() {
   const SCREEN_WIDTH = Dimensions.get('window').width;
@@ -121,6 +122,9 @@ export default function HatimOlustur() {
                   <Text style={{ color: "#163E6C", fontFamily: "OpenSans-Regular", fontSize: 16, fontWeight: "600" }}>Kişi Ekle +</Text>
                 </View>
               </TouchableOpacity>
+              <View>
+                <EklenenKisiComponent></EklenenKisiComponent>
+              </View>
               <View style={{ borderStyle: "dashed", borderColor: "#77A52C", height: 60, width: SCREEN_WIDTH - 30, backgroundColor: "#F1F6EA", borderWidth: 2, borderRadius: 5, marginTop: 15, justifyContent: "center", alignItems: "center" }}>
                 <Text style={{ color: "#163E6C", fontFamily: "OpenSans-Regular", fontSize: 14, fontWeight: "400" }}>Hatim paylaşılan kişiler SMS ile bilgilendirilecektir. Lütfen bilgileri doğru girdiğinizden emin olunuz.</Text>
               </View>
