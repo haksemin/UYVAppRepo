@@ -1,7 +1,8 @@
 import React from "react";
 import { View, Dimensions, Text, Image, TouchableOpacity } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
-export default function HatimKartButonlu({ content }) {
+export default function HatimKartButonlu({ content,wayto }) {
   const shadowStyle =
     Platform.OS === "ios"
       ? {
@@ -16,8 +17,15 @@ export default function HatimKartButonlu({ content }) {
 
   const SCREEN_WIDTH = Dimensions.get('window').width;
 
+      const navigation = useNavigation();
+
+      function wayto1(){
+        navigation.navigate("HatimJoin");
+      }
+ 
+
   return (
-    <TouchableOpacity activeOpacity={1} onPress={() => console.log("TouchableOpacity pressed!")}>
+    <TouchableOpacity activeOpacity={1} onPress={wayto1}>
       <View style={{ width: SCREEN_WIDTH - 30, height: 132, alignSelf: "center", backgroundColor: "white", borderRadius: 10, justifyContent: "space-between", marginTop: 15, ...shadowStyle }}>
         <View style={{ flexDirection: "row" }}>
           <View style={{ marginHorizontal: 15, marginVertical: 15 }}>
